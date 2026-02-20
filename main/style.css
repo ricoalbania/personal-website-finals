@@ -146,3 +146,21 @@ hr { border-top: 2px dashed #4a5d4a; opacity: 1; }
     background-color: #f2cc8f; /* Full gold on hover */
     transform: scale(1.1);
 }
+
+/* Floating Leaf Animation */
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.leaf {
+  position: fixed;
+  top: -10px;
+  color: #4a5d4a;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 9999;
+  animation: fall 10s linear infinite;
+}
