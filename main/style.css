@@ -101,3 +101,7 @@ h2 {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
+#guestbook iframe {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
