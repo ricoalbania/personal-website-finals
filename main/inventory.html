@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory - Roman Rico</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div id="leaf-container"></div>
+<div class="p-5 header-footer-custom text-center">
+  <h1 class="display-4 fw-bold">PLAYER INVENTORY</h1>
+  <p class="lead">Essential Artifacts & Magic Tools</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top shadow">
+  <div class="container-fluid">
+    <ul class="navbar-nav mx-auto"> 
+      <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-shield-alt me-1"></i> Character</a></li>
+      <li class="nav-item"><a class="nav-link" href="quests.html"><i class="fas fa-scroll me-1"></i> Quests</a></li>
+      <li class="nav-item"><a class="nav-link active" href="inventory.html"><i class="fas fa-toolbox me-1"></i> Inventory</a></li>
+      <li class="nav-item"><a class="nav-link" href="log.html"><i class="fas fa-pen-nib me-1"></i> World Log</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5 content-card p-4 p-md-5 mb-5">
+  <div id="resources" class="row g-4">
+    <div class="col-12 text-center mb-4">
+      <h2>Artifacts Gathered</h2>
+    </div>
+    <div class="col-6 col-md-4"><a href="https://www.w3schools.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3"><i class="fas fa-scroll fa-2x"></i></div><h6>W3 Codex</h6></a></div>
+    <div class="col-6 col-md-4"><a href="https://gemini.google.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #9b59b6;"><i class="fas fa-hat-wizard fa-2x" style="color: #9b59b6;"></i></div><h6>Gemini Mage</h6></a></div>
+    <div class="col-6 col-md-4"><a href="https://fontawesome.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #3498db;"><i class="fas fa-gem fa-2x" style="color: #3498db;"></i></div><h6>Visual Gems</h6></a></div>
+    <div class="col-6 col-md-4"><a href="https://chatgpt.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #e67e22;"><i class="fas fa-ghost fa-2x" style="color: #e67e22;"></i></div><h6>The Oracle</h6></a></div>
+    <div class="col-6 col-md-4"><a href="https://fonts.google.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3"><i class="fas fa-pen-fancy fa-2x"></i></div><h6>Magic Runes</h6></a></div>
+    <div class="col-6 col-md-4"><a href="https://github.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #2ecc71;"><i class="fab fa-github fa-2x" style="color: #2ecc71;"></i></div><h6>The Vault</h6></a></div>
+  </div>
+</div>
+
+<div class="header-footer-custom text-center"><p class="mb-0">© 2026 PLAYER 1 | Inventory Full</p></div>
+<script>
+  function createLeaf() {
+      const container = document.getElementById('leaf-container');
+      const leaf = document.createElement('div');
+      leaf.className = 'leaf'; leaf.innerHTML = '🍃'; 
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
+      leaf.style.opacity = Math.random();
+      container.appendChild(leaf);
+      setTimeout(() => { leaf.remove(); }, 10000);
+  }
+  setInterval(createLeaf, 800);
+</script>
+</body>
+</html>
