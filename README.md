@@ -1,1 +1,4 @@
-# personal-website-finals
+{
+  "singleQuote": true,
+  "trailingComma": "all"
+}
