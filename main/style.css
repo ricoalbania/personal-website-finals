@@ -180,3 +180,24 @@ hr { border-top: 2px dashed #4a5d4a; opacity: 1; }
     90% { opacity: 0.8; }
     100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
 }
+
+.gallery-trigger {
+    position: relative;
+}
+
+/* Adds a small 'COMPLETED' tag on hover */
+.col-md-4:hover::before {
+    content: "QUEST COMPLETE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(58, 90, 64, 0.9);
+    color: #f2cc8f;
+    padding: 5px 10px;
+    font-family: 'Press Start 2P';
+    font-size: 0.5rem;
+    z-index: 5;
+    pointer-events: none;
+    border: 2px solid #f2cc8f;
+}
