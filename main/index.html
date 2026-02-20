@@ -42,16 +42,23 @@
 <div class="container mt-5 content-card p-4 p-md-5 mb-5">
   <div class="row g-5"> 
     <div class="col-lg-5 col-md-12">
-      <h2 class="mb-4">Character Info</h2>
-      <div class="text-center text-lg-start mb-4">
-        <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" 
-             alt="rico" 
-             class="img-fluid themed-img" 
-             style="max-width: 220px; border: 4px solid #a5a58d; cursor: pointer;" 
-             onclick="playLevelUp()" 
-             title="Click to Level Up!">
-      </div>
+      <h2 class="mb-4">Character Card</h2>
       
+      <div class="char-card-container mb-4 mx-auto mx-lg-0" onclick="playLevelUp()" title="Click to Level Up!">
+        <div class="lvl-badge">20</div>
+        
+        <div class="card-img-wrap">
+          <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico">
+        </div>
+        
+        <div class="element-icon" title="Tech Element">
+          <i class="fas fa-microchip"></i>
+        </div>
+        
+        <div class="text-center mt-2">
+          <small class="fw-bold text-dark" style="font-family: 'VT323'; letter-spacing: 1px; font-size: 1.2rem;">LEGENDARY EXPLORER</small>
+        </div>
+      </div>
       <div class="mb-5 stats-box">
         <small class="d-block mb-1 text-uppercase fw-bold">HP [Health]</small>
         <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 90%"></div></div>

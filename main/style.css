@@ -282,3 +282,67 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     50% { opacity: 1; transform: scale(1.05); }
     100% { opacity: 0.8; transform: scale(1); }
 }
+
+/* CHARACTER CARD CONTAINER */
+.char-card-container {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+    padding: 10px;
+    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37); /* Gold Rarity border */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.char-card-container:hover {
+    transform: translateY(-10px) rotate(2deg); /* Card hover tilt */
+}
+
+/* THE ACTUAL IMAGE CLIP */
+.card-img-wrap {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 4px solid #2b2d42;
+    background-color: #333;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LEVEL BADGE OVERLAY */
+.lvl-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e76f51;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 8px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* ELEMENTAL ICON (Optional) */
+.element-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f2cc8f;
+    color: #f2cc8f;
+}
