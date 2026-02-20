@@ -34,48 +34,54 @@
 </nav>
 
 <div class="container mt-5 content-card p-4 p-md-5 mb-5">
-  <div class="row g-4">
-    <div class="col-lg-5 col-md-12">
-      <h2>Character Info</h2>
-      <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico" class="img-fluid themed-img mb-4" style="max-width: 200px; border: 4px solid #a5a58d;">
+  <div class="row g-5"> <div class="col-lg-5 col-md-12">
+      <h2 class="mb-4">Character Info</h2>
+      <div class="text-center text-lg-start mb-4">
+        <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico" class="img-fluid themed-img" style="max-width: 220px; border: 4px solid #a5a58d;">
+      </div>
       
-      <div class="mb-4">
+      <div class="mb-5 stats-box">
         <small class="d-block mb-1 text-uppercase fw-bold">HP [Health]</small>
-        <div class="progress progress-rpg"><div class="progress-bar hp-bar"></div></div>
+        <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 90%"></div></div>
+        
         <small class="d-block mb-1 text-uppercase fw-bold">MP [Logic]</small>
-        <div class="progress progress-rpg"><div class="progress-bar mp-bar"></div></div>
+        <div class="progress progress-rpg"><div class="progress-bar mp-bar" style="width: 75%"></div></div>
+        
         <small class="d-block mb-1 text-uppercase fw-bold">EXP [Studies]</small>
-        <div class="progress progress-rpg"><div class="progress-bar exp-bar"></div></div>
+        <div class="progress progress-rpg"><div class="progress-bar exp-bar" style="width: 50%"></div></div>
       </div>
 
-      <h4 class="fw-bold mb-3">The Lore</h4>
-      <p>I am an aspiring IT professional at <b>Asia Pacific College</b>, passionate about solving real-world mysteries through technology. I find balance between my digital studies and hands-on outdoor hobbies.</p>
+      <h4 class="fw-bold mb-3 mt-4" style="color: #f2cc8f;">The Lore</h4>
+      <p class="pe-lg-4" style="text-align: justify;">I am an aspiring IT professional at <b>Asia Pacific College</b>, passionate about solving real-world mysteries through technology. I find balance between my digital studies and hands-on outdoor hobbies.</p>
     </div>
 
     <div class="col-lg-7 col-md-12">
-      <h2 class="text-success">SKILL TREE</h2>
-      <div class="row g-3">
+      <h2 class="text-success mb-4">SKILL TREE</h2>
+      <div class="row g-4 mb-5">
         <div class="col-md-12">
-          <p class="mb-1"><i class="fas fa-fire text-danger"></i> FRONTEND SORCERY [HTML/CSS]</p>
+          <p class="mb-2"><i class="fas fa-fire text-danger"></i> FRONTEND SORCERY [HTML/CSS]</p>
           <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 85%"></div></div>
         </div>
         <div class="col-md-12">
-          <p class="mb-1"><i class="fas fa-bolt text-warning"></i> BACKEND ALCHEMY [NestJS]</p>
+          <p class="mb-2"><i class="fas fa-bolt text-warning"></i> BACKEND ALCHEMY [NestJS]</p>
           <div class="progress progress-rpg"><div class="progress-bar exp-bar" style="width: 60%"></div></div>
         </div>
       </div>
 
-      <h2 class="mt-5">Active Quests</h2>
-      <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/bootstrap5/Untitled%20design.png?raw=true" alt="hobbies" class="img-fluid themed-img mb-4 shadow-sm">
-      <p class="lead">"Exploring the digital realm and the physical world..."</p>
-      <p>I believe in a life of balance. My time is split between the digital world of IT and the physical world of adventure. Whether it's the precision required for motorcycle maintenance or the teamwork of basketball, I bring that same dedication to my technical studies.</p>
+      <h2 class="mt-2 mb-4">Active Quests</h2>
+      <div class="mb-4">
+        <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/bootstrap5/Untitled%20design.png?raw=true" alt="hobbies" class="img-fluid themed-img shadow-sm w-100">
+      </div>
+      <p class="lead fw-bold" style="color: #f2cc8f;">"Exploring the digital realm and the physical world..."</p>
+      <p style="text-align: justify;">I believe in a life of balance. My time is split between the digital world of IT and the physical world of adventure. Whether it's the precision required for motorcycle maintenance or the teamwork of basketball, I bring that same dedication to my technical studies.</p>
     </div>
   </div>
+  <hr class="my-5">
 
-  <div class="row">
-    <div class="col-12">
-        <h2 class="mt-5 text-success">Main Hub: Asia Pacific College</h2>
-        <div id="demo" class="carousel slide shadow border border-3 border-dark overflow-hidden mb-4" data-bs-ride="carousel" style="max-width: 600px;">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-12">
+        <h2 class="mb-4 text-success text-center">Main Hub: Asia Pacific College</h2>
+        <div id="demo" class="carousel slide shadow border border-3 border-dark overflow-hidden mx-auto mb-4" data-bs-ride="carousel">
           
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
