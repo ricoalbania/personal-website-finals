@@ -15,6 +15,8 @@
 </head>
 <body>
 
+<audio id="level-up-sound" src="https://assets.mixkit.co/active_storage/sfx/2010/2010-preview.mp3" preload="auto"></audio>
+
 <div id="leaf-container"></div>
 
 <div class="p-5 header-footer-custom text-center">
@@ -42,7 +44,12 @@
     <div class="col-lg-5 col-md-12">
       <h2 class="mb-4">Character Info</h2>
       <div class="text-center text-lg-start mb-4">
-        <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico" class="img-fluid themed-img" style="max-width: 220px; border: 4px solid #a5a58d;">
+        <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" 
+             alt="rico" 
+             class="img-fluid themed-img" 
+             style="max-width: 220px; border: 4px solid #a5a58d; cursor: pointer;" 
+             onclick="playLevelUp()" 
+             title="Click to Level Up!">
       </div>
       
       <div class="mb-5 stats-box">
@@ -271,6 +278,13 @@
 </div>
 
 <script>
+  // NEW: Level Up Sound Function
+  function playLevelUp() {
+      const sound = document.getElementById('level-up-sound');
+      sound.currentTime = 0; // Restart sound if clicked rapidly
+      sound.play();
+  }
+
   function createLeaf() {
       const container = document.getElementById('leaf-container');
       const leaf = document.createElement('div');

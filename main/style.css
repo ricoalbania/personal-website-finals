@@ -256,3 +256,29 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     border: 2px solid #f2cc8f;
     box-shadow: 4px 4px 0px #000;
 }
+
+/* 14. PROGRESS BAR ANIMATIONS */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+/* Apply the animation to all progress bars */
+.progress-bar {
+    animation: fillBar 2s ease-out forwards;
+}
+
+/* Specific delays to make them fill one after another */
+.hp-bar { animation-delay: 0.2s; }
+.mp-bar { animation-delay: 0.5s; }
+.exp-bar { animation-delay: 0.8s; }
+
+/* Status Badge Pulse Effect */
+.status-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
