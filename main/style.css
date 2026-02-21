@@ -314,36 +314,40 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 .lvl-badge {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 50px;
-    height: 50px;
-    background: #e76f51; 
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
+    top: 20px;
+    left: 20px;
+    width: 55px !important;
+    height: 55px !important;
+    background: radial-gradient(circle at 30% 30%, #f2cc8f, #8a5a44);
+    border: 3px solid #fff;
+    border-radius: 50% !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #000;
-    border-radius: 50%; 
+    font-family: 'Press Start 2P';
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 2px 2px #000;
     z-index: 10;
+    box-shadow: 0 0 15px rgba(242, 204, 143, 0.8);
 }
 
 
 .element-icon {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 50%;
+    bottom: 60px;
+    left: 25px;
     width: 40px;
     height: 40px;
+    background: rgba(0,0,0,0.8);
+    border: 2px solid #f2cc8f;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #f2cc8f;
     color: #f2cc8f;
+    font-size: 1.2rem;
+    z-index: 5;
 }
 
 /* 15. THE FIX FOR WHITE BOXES & DOUBLE TEXT */
@@ -654,10 +658,10 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 /* --- 3D CARD FLIP --- */
 .char-card-container {
-    perspective: 1000px; 
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer;
+    perspective: 1000px;
+    width: 320px; /* Made it slightly wider for the "Epic" feel */
+    height: 450px;
+    margin: 20px auto;
 }
 
 .card-inner {
@@ -674,18 +678,29 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 }
 
 .card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: #1b2e1b;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-  border: 4px solid #f2cc8f;
-  border-radius: 15px;
+    background: linear-gradient(135deg, #1b2e1b 0%, #0b130b 100%);
+    border: 8px solid #f2cc8f; /* Main Gold Border */
+    outline: 2px solid #000;
+    outline-offset: -6px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(242, 204, 143, 0.3), 10px 10px 0px #000;
+    position: relative;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-front::before {
+    content: "";
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 2px solid rgba(242, 204, 143, 0.5);
+    border-radius: 12px;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 10px 10px;
 }
 
 .card-back {
@@ -709,17 +724,34 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 }
 
 .card-img-wrap {
-  width: 90%;
-  height: 80%;
-  overflow: hidden;
-  border: 2px solid #000;
+    width: 100%;
+    height: 70%;
+    border: 4px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    box-shadow: inset 0 0 15px #000;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(1.1);
 }
 
 .char-name-text {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-    color: #f2cc8f !important; /* Gold color for visibility */
-    text-shadow: 0 0 10px rgba(242, 204, 143, 0.5); 
-    letter-spacing: 2px;
-    margin-top: 10px;
+    margin-top: 15px;
+    padding: 5px 25px;
+    background: linear-gradient(to right, #48cae4, #0077b6);
+    border: 3px solid #caf0f8;
+    border-radius: 5px;
+    font-family: 'Press Start 2P';
+    font-size: 0.7rem !important;
+    color: #fff !important;
+    text-shadow: 2px 2px #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 5;
+    letter-spacing: 1px;
 }
