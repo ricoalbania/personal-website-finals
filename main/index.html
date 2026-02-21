@@ -154,14 +154,26 @@
     cardInner.classList.toggle('is-flipped');
   }
 
-  function playLevelUp() {
-      const sound = document.getElementById('level-up-sound');
-      sound.currentTime = 0; 
-      sound.play();
-      const img = document.querySelector('.card-img-wrap img');
-      img.style.filter = "brightness(2) contrast(1.5)";
-      setTimeout(() => { img.style.filter = "none"; }, 150);
-  }
+function playLevelUp() {
+    const sound = document.getElementById('level-up-sound');
+    
+    // Reset sound to start (so it plays even if you click fast)
+    sound.pause();
+    sound.currentTime = 0; 
+    
+    // Play the sound
+    sound.play().catch(error => {
+        console.log("Browser blocked sound. Click the page once first!", error);
+    });
+
+    // Keeping your flash effect logic
+    const img = document.querySelector('.card-img-wrap img');
+    if (img) {
+        img.style.transition = "filter 0.1s";
+        img.style.filter = "brightness(2) contrast(1.5) drop-shadow(0 0 10px gold)";
+        setTimeout(() => { img.style.filter = "none"; }, 150);
+    }
+}
 
   function createLeaf() {
       const container = document.getElementById('leaf-container');
