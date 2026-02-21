@@ -414,3 +414,75 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 #imageModal .modal-content {
     box-shadow: 0 0 30px rgba(242, 204, 143, 0.3);
 }
+
+/* --- CHARACTER PORTRAIT --- */
+.char-frame {
+    position: relative;
+    border: 4px double #f2cc8f;
+    padding: 15px;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.portrait-container {
+    position: relative;
+    border: 2px solid #4a5d4a;
+    overflow: hidden;
+    animation: portrait-breathing 4s ease-in-out infinite;
+}
+
+@keyframes portrait-breathing {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(242, 204, 143, 0.2); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(242, 204, 143, 0.5); }
+}
+
+/* --- EQUIPMENT SLOTS --- */
+.equipment-screen {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(27, 46, 27, 0.5);
+    border: 2px solid #4a5d4a;
+}
+
+.paper-doll {
+    position: relative;
+    height: 250px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.central-icon {
+    font-size: 80px;
+    color: #4a5d4a;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+
+.equip-slot {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #000;
+    border: 2px solid #f2cc8f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f2cc8f;
+    cursor: help;
+    transition: 0.3s;
+}
+
+.equip-slot:hover {
+    background: #f2cc8f;
+    color: #0b130b;
+    transform: scale(1.1);
+}
+
+/* Slot Positions */
+.head { top: 10%; left: 50%; transform: translateX(-50%); }
+.weapon { top: 40%; left: 5%; }
+.body { top: 40%; left: 50%; transform: translateX(-50%); }
+.mount { bottom: 5%; left: 50%; transform: translateX(-50%); }
