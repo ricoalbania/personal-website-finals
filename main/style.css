@@ -374,11 +374,13 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
 }
 
-/* ADD THIS TO THE VERY END OF style.css */
+/* ADD TO THE VERY END OF STYLE.CSS */
 .nav-pills .nav-link.active, 
 .nav-tabs .nav-link.active,
-#quests .nav-link.active {
-    background-color: #f2cc8f !important; /* Forces the gold color */
-    color: #0b130b !important;            /* Forces dark text */
+.nav-link.active {
+    background-color: #f2cc8f !important; /* Forces Gold */
+    color: #0b130b !important;            /* Fixes dark text */
     border: 2px solid #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;         /* Fixes double-text */
 }
