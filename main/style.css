@@ -404,3 +404,13 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     width: 100%;
     object-fit: cover;
 }
+
+.border-gold {
+    border: 4px solid #f2cc8f !important;
+    background-color: #0b130b !important;
+    border-radius: 0 !important;
+}
+
+#imageModal .modal-content {
+    box-shadow: 0 0 30px rgba(242, 204, 143, 0.3);
+}
