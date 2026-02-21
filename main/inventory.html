@@ -11,7 +11,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+
 <div id="leaf-container"></div>
+
 <div class="p-5 header-footer-custom text-center">
   <h1 class="display-4 fw-bold">PLAYER INVENTORY</h1>
   <p class="lead">Essential Artifacts & Magic Tools</p> 
@@ -33,19 +35,78 @@
     <div class="col-12 text-center mb-4">
       <h2>Artifacts Gathered</h2>
     </div>
-    <div class="col-6 col-md-4"><a href="https://www.w3schools.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3"><i class="fas fa-scroll fa-2x"></i></div><h6>W3 Codex</h6></a></div>
-    <div class="col-6 col-md-4"><a href="https://gemini.google.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #9b59b6;"><i class="fas fa-hat-wizard fa-2x" style="color: #9b59b6;"></i></div><h6>Gemini Mage</h6></a></div>
-    <div class="col-6 col-md-4"><a href="https://fontawesome.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #3498db;"><i class="fas fa-gem fa-2x" style="color: #3498db;"></i></div><h6>Visual Gems</h6></a></div>
-    <div class="col-6 col-md-4"><a href="https://chatgpt.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #e67e22;"><i class="fas fa-ghost fa-2x" style="color: #e67e22;"></i></div><h6>The Oracle</h6></a></div>
-    <div class="col-6 col-md-4"><a href="https://fonts.google.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3"><i class="fas fa-pen-fancy fa-2x"></i></div><h6>Magic Runes</h6></a></div>
-    <div class="col-6 col-md-4"><a href="https://github.com" target="_blank" class="resource-card p-4 text-center"><div class="item-slot mb-3" style="border-color: #2ecc71;"><i class="fab fa-github fa-2x" style="color: #2ecc71;"></i></div><h6>The Vault</h6></a></div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://www.w3schools.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3">
+          <i class="fas fa-scroll fa-2x"></i>
+        </div>
+        <h6>W3 CODEX</h6>
+        <div class="status-badge">BASIC</div>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://gemini.google.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3" style="border-color: #9b59b6;">
+          <i class="fas fa-hat-wizard fa-2x" style="color: #9b59b6;"></i>
+        </div>
+        <h6>GEMINI MAGE</h6>
+        <div class="status-badge">LEGENDARY</div>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://fontawesome.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3" style="border-color: #3498db;">
+          <i class="fas fa-gem fa-2x" style="color: #3498db;"></i>
+        </div>
+        <h6>VISUAL GEMS</h6>
+        <div class="status-badge">RARE</div>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://chatgpt.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3" style="border-color: #e67e22;">
+          <i class="fas fa-ghost fa-2x" style="color: #e67e22;"></i>
+        </div>
+        <h6>THE ORACLE</h6>
+        <div class="status-badge">EPIC</div>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://fonts.google.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3">
+          <i class="fas fa-pen-fancy fa-2x"></i>
+        </div>
+        <h6>MAGIC RUNES</h6>
+        <div class="status-badge">COMMON</div>
+      </a>
+    </div>
+
+    <div class="col-6 col-md-4">
+      <a href="https://github.com" target="_blank" class="resource-card p-4 text-center">
+        <div class="item-slot mb-3" style="border-color: #2ecc71;">
+          <i class="fab fa-github fa-2x" style="color: #2ecc71;"></i>
+        </div>
+        <h6>THE VAULT</h6>
+        <div class="status-badge">MYTHIC</div>
+      </a>
+    </div>
+
   </div>
 </div>
 
-<div class="header-footer-custom text-center"><p class="mb-0">© 2026 PLAYER 1 | Inventory Full</p></div>
+<div class="header-footer-custom text-center mt-5">
+  <p class="mb-0">© 2026 PLAYER 1 | Inventory Full</p>
+</div>
+
 <script>
   function createLeaf() {
       const container = document.getElementById('leaf-container');
+      if(!container) return;
       const leaf = document.createElement('div');
       leaf.className = 'leaf'; leaf.innerHTML = '🍃'; 
       leaf.style.left = Math.random() * 100 + 'vw';
