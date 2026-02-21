@@ -773,3 +773,63 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     letter-spacing: 3px;
     opacity: 0.8;
 }
+
+/* THE FOREST OVERLAY BACKGROUND */
+body {
+    background: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    image-rendering: pixelated; /* Gives it that retro game feel */
+}
+
+/* THE HUD CONTAINERS (Glassmorphism) */
+.content-card, .stats-box {
+    background: rgba(11, 19, 11, 0.85) !important; /* Deep forest green, semi-transparent */
+    border: 3px solid #f2cc8f !important;
+    backdrop-filter: blur(10px); /* Blurs the forest behind the menu */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(242, 204, 143, 0.2);
+    border-radius: 0; /* Square edges look more like classic RPG menus */
+}
+
+/* NAVIGATION AS HUD TABS */
+.nav-link {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(242, 204, 143, 0.3) !important;
+    margin: 0 5px;
+    color: #f2cc8f !important;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.nav-link.active {
+    background: #f2cc8f !important;
+    color: #0b130b !important;
+    box-shadow: 0 0 15px #f2cc8f;
+}
+
+.battle-arena {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    border-top: 2px dashed rgba(242, 204, 143, 0.5);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.stickman {
+    position: absolute;
+    bottom: 10px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.hero { left: 20%; animation: attackHero 2s infinite; }
+.enemy { right: 20%; animation: attackEnemy 2s infinite; color: #e76f51; }
+
+@keyframes attackHero {
+    0%, 100% { left: 20%; }
+    50% { left: 40%; }
+}
+
+@keyframes attackEnemy {
+    0%, 100% { right: 20%; }
+    50% { right: 40%; }
+}
