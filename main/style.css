@@ -505,3 +505,53 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     text-transform: uppercase;
     white-space: nowrap;
 }
+
+/* Tooltip Container Styling */
+.equip-slot {
+    position: relative; /* Anchor for the tooltip */
+}
+
+/* The actual Tooltip box */
+.equip-slot::after {
+    content: attr(data-description); /* Pulls text from HTML */
+    position: absolute;
+    bottom: 125%; /* Positions it above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    padding: 10px;
+    background: #0b130b;
+    border: 2px solid #f2cc8f;
+    color: #f2cc8f;
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 99;
+    box-shadow: 5px 5px 0px #000;
+    pointer-events: none;
+}
+
+/* Triangle pointer for the tooltip */
+.equip-slot::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #f2cc8f transparent transparent transparent;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+}
+
+/* Show on Hover */
+.equip-slot:hover::after, 
+.equip-slot:hover::before {
+    visibility: visible;
+    opacity: 1;
+}

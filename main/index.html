@@ -103,27 +103,27 @@
         <div class="paper-doll-container">
           <i class="fas fa-user-ninja central-silhouette"></i>
           
-          <div class="equip-slot slot-head" title="Knowledge Base">
+          <div class="equip-slot slot-head" data-description="LOGIC: Passively increases 'Bug Detection' by 25%.">
             <i class="fas fa-brain"></i>
             <span class="slot-label">LOGIC</span>
           </div>
 
-          <div class="equip-slot slot-weapon" title="Primary Language">
+          <div class="equip-slot slot-weapon" data-description="JS_BLADE: A sharp tool for slicing through complex front-end problems.">
             <i class="fas fa-code"></i>
             <span class="slot-label">JS_BLADE</span>
           </div>
 
-          <div class="equip-slot slot-body" title="Defense Framework">
+          <div class="equip-slot slot-body" data-description="BOOTSTRAP: Sturdy armor that protects your layout from breaking on mobile.">
             <i class="fas fa-shield-halved"></i>
             <span class="slot-label">BOOTSTRAP</span>
           </div>
 
-          <div class="equip-slot slot-accessory" title="Skill Multiplier">
+          <div class="equip-slot slot-accessory" data-description="TEAMWORK: Grants a synergy bonus when working with a party.">
             <i class="fas fa-basketball-ball"></i>
             <span class="slot-label">TEAMWORK</span>
           </div>
 
-          <div class="equip-slot slot-mount" title="Rapid Travel">
+          <div class="equip-slot slot-mount" data-description="IRON_STEED: Your level 20 motorcycle. +100 to commute speed.">
             <i class="fas fa-motorcycle"></i>
             <span class="slot-label">IRON_STEED</span>
           </div>
@@ -159,7 +159,6 @@
       sound.currentTime = 0; 
       sound.play();
       
-      // Visual feedback: brief flash
       const img = document.querySelector('.card-img-wrap');
       img.style.filter = "brightness(2) contrast(1.5)";
       setTimeout(() => { img.style.filter = "none"; }, 150);
