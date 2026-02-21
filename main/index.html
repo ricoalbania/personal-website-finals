@@ -157,20 +157,30 @@
 function playLevelUp() {
     const sound = document.getElementById('level-up-sound');
     
-    // Reset sound to start (so it plays even if you click fast)
-    sound.pause();
-    sound.currentTime = 0; 
-    
-    // Play the sound
-    sound.play().catch(error => {
-        console.log("Browser blocked sound. Click the page once first!", error);
-    });
+    // Create an audio context to bypass browser "Autoplay" blocks
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
 
-    // Keeping your flash effect logic
+    // Reset and Play
+    sound.pause();
+    sound.currentTime = 0;
+    
+    let playPromise = sound.play();
+
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+            console.log("Sound played successfully!");
+        }).catch(error => {
+            console.log("Playback failed. Make sure to click the card!", error);
+        });
+    }
+
+    // Visual Flash Effect
     const img = document.querySelector('.card-img-wrap img');
     if (img) {
-        img.style.transition = "filter 0.1s";
-        img.style.filter = "brightness(2) contrast(1.5) drop-shadow(0 0 10px gold)";
+        img.style.filter = "brightness(2) gold";
         setTimeout(() => { img.style.filter = "none"; }, 150);
     }
 }
