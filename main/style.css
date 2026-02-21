@@ -95,13 +95,20 @@ h4 { font-size: 0.9rem; }
 
 /* 6. IMAGES & GALLERY */
 .themed-img {
-    border: 4px solid #a5a58d;
-    padding: 5px;
-    background: #000;
-    transition: all 0.3s;
-    border-radius: 0 !important;
-    box-shadow: 5px 5px 0px #000;
+    width: 100%;            /* Fills the width of the column */
+    height: 180px;          /* Forces a consistent height for all photos */
+    object-fit: cover;      /* Crops the image to fit the box without stretching */
+    object-position: center; /* Keeps the focus on the middle of the photo */
+    
+    /* Your existing styles */
+    border: 3px solid #f2cc8f;
+    box-shadow: 4px 4px 0px #000;
+    display: block;
 }
+
+.row.g-2 {
+    --bs-gutter-x: 0.5rem;
+    --bs-gutter-y: 0.5rem;
 
 .themed-img:hover {
     transform: scale(1.02) rotate(1deg);
