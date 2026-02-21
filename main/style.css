@@ -316,8 +316,8 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     position: absolute;
     top: -10px;
     left: -10px;
-    width: 50px; /* Restores the circle shape */
-    height: 50px; /* Restores the circle shape */
+    width: 50px;
+    height: 50px;
     background: #e76f51; 
     color: white;
     font-family: 'Press Start 2P', cursive;
@@ -326,8 +326,8 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     align-items: center;
     justify-content: center;
     border: 3px solid #000;
-    border-radius: 50% !important; /* Forces perfect circle */
-    z-index: 20; /* Ensures it stays above the 3D container */
+    border-radius: 50%; 
+    z-index: 10;
 }
 
 
@@ -598,7 +598,7 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     flex-shrink: 0;
     width: 80px;
     height: 80px;
-    background: #fff; /* White background to make the school logos clear */
+    background: #fff; 
     border: 3px solid #f2cc8f;
     padding: 5px;
     display: flex;
@@ -644,12 +644,10 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 /* --- 3D CARD FLIP --- */
 .char-card-container {
-    perspective: 1000px; /* Gives the 3D depth */
+    perspective: 1000px; 
     background: transparent !important;
     border: none !important;
     cursor: pointer;
-    height: 380px; 
-    width: 280px;
 }
 
 .card-inner {
@@ -675,7 +673,7 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Allows badge to pop out */
+  overflow: visible;
   border: 4px solid #f2cc8f;
   border-radius: 15px;
 }
@@ -694,6 +692,12 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     border-radius: 15px;
 }
 
+/* Ensure the wrapper has a set height since children are absolute */
+.char-card-container {
+    height: 380px; 
+    width: 280px;
+}
+
 .card-img-wrap {
   width: 90%;
   height: 80%;
@@ -704,7 +708,7 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 .char-name-text {
     font-family: 'VT323', monospace;
     font-size: 1.5rem;
-    color: #f2cc8f !important; /* Gold name fix */
+    color: #f2cc8f !important; /* Gold color for visibility */
     text-shadow: 0 0 10px rgba(242, 204, 143, 0.5); 
     letter-spacing: 2px;
     margin-top: 10px;
