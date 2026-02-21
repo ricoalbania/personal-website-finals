@@ -438,14 +438,17 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 /* --- EQUIPMENT SLOTS FIXED --- */
 .equipment-grid {
+    display: block; /* Ensure it occupies full layout space */
     position: relative;
     width: 100%;
-    height: 400px; /* Increased height for better vertical spacing */
+    height: 420px; /* Increased slightly for labels */
     background: rgba(27, 46, 27, 0.5);
     border: 2px solid #4a5d4a;
     border-radius: 10px;
     margin-top: 20px;
+    margin-bottom: 50px; /* Creates physical gap before Skill Tree */
     overflow: visible; 
+    clear: both;
 }
 
 .paper-doll-container {
@@ -480,47 +483,29 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     z-index: 2;
 }
 
-/* Positioning - Using specific transform combinations to prevent fly-away issues */
-.slot-head { 
-    top: 10%; 
-    left: 50%; 
-    transform: translate(-50%, 0); 
-}
-.slot-weapon { 
-    top: 45%; 
-    left: 15%; 
-}
-.slot-body { 
-    top: 45%; 
-    left: 50%; 
-    transform: translate(-50%, 0); 
-}
-.slot-accessory { 
-    top: 45%; 
-    right: 15%; 
-}
-.slot-mount { 
-    bottom: 12%; 
-    left: 50%; 
-    transform: translate(-50%, 0); 
-}
+/* Fixed positioning to prevent overlapping in different screen sizes */
+.slot-head      { top: 10%; left: 50%; transform: translate(-50%, 0); }
+.slot-weapon    { top: 45%; left: 15%; }
+.slot-body      { top: 45%; left: 50%; transform: translate(-50%, 0); }
+.slot-accessory { top: 45%; right: 15%; }
+.slot-mount     { bottom: 15%; left: 50%; transform: translate(-50%, 0); }
 
-/* Hover Effect - Merging scale with existing translation for centered items */
-.slot-head:hover, .slot-body:hover, .slot-mount:hover {
-    transform: translate(-50%, 0) scale(1.1);
+/* Unified Hover Effect */
+.equip-slot:hover {
     background: #f2cc8f;
     color: #0b130b;
     box-shadow: 0 0 15px #f2cc8f;
+}
+
+/* Ensure centered items stay centered when scaled */
+.slot-head:hover, .slot-body:hover, .slot-mount:hover {
+    transform: translate(-50%, 0) scale(1.1);
 }
 
 .slot-weapon:hover, .slot-accessory:hover {
     transform: scale(1.1);
-    background: #f2cc8f;
-    color: #0b130b;
-    box-shadow: 0 0 15px #f2cc8f;
 }
 
-/* Style for the text labels */
 .slot-label {
     position: absolute;
     bottom: -28px;
@@ -573,4 +558,11 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 .equip-slot:hover::before {
     visibility: visible;
     opacity: 1;
+}
+
+/* Prevent Skill Tree overlapping */
+.skill-tree-block {
+    position: relative;
+    z-index: 5;
+    background: transparent;
 }
