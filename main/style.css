@@ -343,8 +343,6 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 }
 
 /* 15. THE FIX FOR WHITE BOXES & DOUBLE TEXT */
-/* This section ensures Quest/Stat tabs look correct */
-
 .nav-pills .nav-link {
     background-color: #1b2e1b !important;
     color: #f2cc8f !important;
@@ -354,12 +352,12 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     font-size: 0.7rem !important;
     border-radius: 0 !important;
     box-shadow: 4px 4px 0px #000;
-    text-shadow: none !important; /* Fixes double text glitch */
+    text-shadow: none !important; 
 }
 
 .nav-pills .nav-link.active {
-    background-color: #f2cc8f !important; /* Fixes white box */
-    color: #0b130b !important;            /* Fixes readability */
+    background-color: #f2cc8f !important; 
+    color: #0b130b !important;            
     border: 2px solid #000 !important;
     box-shadow: none !important;
     transform: translate(2px, 2px);
@@ -374,31 +372,23 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
 }
 
-/* ADD TO THE VERY END OF STYLE.CSS */
 .nav-pills .nav-link.active, 
 .nav-tabs .nav-link.active,
 .nav-link.active {
-    background-color: #f2cc8f !important; /* Forces Gold */
-    color: #0b130b !important;            /* Fixes dark text */
+    background-color: #f2cc8f !important; 
+    color: #0b130b !important;            
     border: 2px solid #000 !important;
     box-shadow: none !important;
-    text-shadow: none !important;         /* Fixes double-text */
-}
-
-/* --- LAYOUT FIX: Keep images at the top and centered --- */
-.tab-content {
-    display: block !important;
-    min-height: auto !important; /* Removes unnecessary empty space */
+    text-shadow: none !important;         
 }
 
 .tab-pane .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers the images in the row */
-    align-items: flex-start; /* Forces them to stay at the top */
+    justify-content: center; 
+    align-items: flex-start; 
 }
 
-/* Ensure images don't stretch weirdly */
 .themed-img {
     max-height: 350px;
     width: 100%;
@@ -412,8 +402,13 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 }
 
 #imageModal .modal-content {
+    background-color: #1b2e1b !important;
+    border: 4px solid #f2cc8f !important;
+    border-radius: 0 !important;
     box-shadow: 0 0 30px rgba(242, 204, 143, 0.3);
 }
+
+.modal-header { border-bottom: 2px solid #4a5d4a; }
 
 /* --- CHARACTER PORTRAIT --- */
 .char-frame {
@@ -436,17 +431,17 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(242, 204, 143, 0.5); }
 }
 
-/* --- EQUIPMENT SLOTS FIXED --- */
+/* --- EQUIPMENT SLOTS FIXED (Updated for Links) --- */
 .equipment-grid {
-    display: block; /* Ensure it occupies full layout space */
+    display: block;
     position: relative;
     width: 100%;
-    height: 420px; /* Increased slightly for labels */
+    height: 420px;
     background: rgba(27, 46, 27, 0.5);
     border: 2px solid #4a5d4a;
     border-radius: 10px;
     margin-top: 20px;
-    margin-bottom: 50px; /* Creates physical gap before Skill Tree */
+    margin-bottom: 50px;
     overflow: visible; 
     clear: both;
 }
@@ -468,42 +463,41 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     z-index: 1;
 }
 
+/* NEW: Equipment Slots as Links */
 .equip-slot {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     background: #000;
     border: 2px solid #f2cc8f;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f2cc8f;
-    cursor: help;
+    color: #f2cc8f !important;
+    text-decoration: none !important;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
     z-index: 2;
 }
 
-/* Fixed positioning to prevent overlapping in different screen sizes */
 .slot-head      { top: 10%; left: 50%; transform: translate(-50%, 0); }
 .slot-weapon    { top: 45%; left: 15%; }
 .slot-body      { top: 45%; left: 50%; transform: translate(-50%, 0); }
 .slot-accessory { top: 45%; right: 15%; }
 .slot-mount     { bottom: 15%; left: 50%; transform: translate(-50%, 0); }
 
-/* Unified Hover Effect */
 .equip-slot:hover {
-    background: #f2cc8f;
-    color: #0b130b;
+    background: #f2cc8f !important;
+    color: #0b130b !important;
     box-shadow: 0 0 15px #f2cc8f;
 }
 
-/* Ensure centered items stay centered when scaled */
 .slot-head:hover, .slot-body:hover, .slot-mount:hover {
-    transform: translate(-50%, 0) scale(1.1);
+    transform: translate(-50%, 0) scale(1.1) !important;
 }
 
 .slot-weapon:hover, .slot-accessory:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) !important;
 }
 
 .slot-label {
@@ -540,29 +534,20 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     line-height: 1.2;
 }
 
-.equip-slot::before {
-    content: "";
-    position: absolute;
-    bottom: 115%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: #f2cc8f transparent transparent transparent;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 100;
-}
-
-.equip-slot:hover::after, 
-.equip-slot:hover::before {
+.equip-slot:hover::after {
     visibility: visible;
     opacity: 1;
 }
 
-/* Prevent Skill Tree overlapping */
+/* --- SKILL TREE & MISC --- */
 .skill-tree-block {
     position: relative;
     z-index: 5;
     background: transparent;
+}
+
+@media (max-width: 768px) {
+    .equipment-grid { height: 350px; }
+    .equip-slot { width: 50px; height: 50px; }
+    .content-card { padding: 40px 20px 20px 20px; }
 }
