@@ -283,16 +283,13 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 /* CHARACTER CARD CONTAINER */
 .char-card-container {
-    position: relative;
-    width: 240px;
-    margin: 0 auto;
-    padding: 10px;
-    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37); 
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.3);
-    transition: transform 0.3s ease;
+    perspective: 1000px;
+    width: 320px; 
+    height: 450px; /* Increased height to contain everything */
+    margin: 20px auto;
+    background: transparent !important;
+    border: none !important;
 }
-
 .char-card-container:hover {
     transform: translateY(-10px) rotate(2deg); 
 }
@@ -314,22 +311,21 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 .lvl-badge {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 55px !important;
-    height: 55px !important;
-    background: radial-gradient(circle at 30% 30%, #f2cc8f, #8a5a44);
-    border: 3px solid #fff;
+    top: 15px;
+    left: 15px;
+    width: 50px !important;
+    height: 50px !important;
+    background: radial-gradient(circle, #f2cc8f, #8a5a44);
+    border: 2px solid #fff;
     border-radius: 50% !important;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Press Start 2P';
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #fff;
-    text-shadow: 2px 2px #000;
     z-index: 10;
-    box-shadow: 0 0 15px rgba(242, 204, 143, 0.8);
+    box-shadow: 0 0 10px rgba(242, 204, 143, 0.5);
 }
 
 
@@ -670,6 +666,7 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     height: 100%;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
+-style: preserve-3d;
 }
 
 /* This class is toggled by JavaScript */
@@ -679,17 +676,10 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 .card-front {
     background: linear-gradient(135deg, #1b2e1b 0%, #0b130b 100%);
-    border: 8px solid #f2cc8f; /* Main Gold Border */
-    outline: 2px solid #000;
-    outline-offset: -6px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(242, 204, 143, 0.3), 10px 10px 0px #000;
-    position: relative;
-    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    padding: 15px;
 }
 
 .card-front::before {
@@ -704,17 +694,25 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 }
 
 .card-back {
+    background: #0b130b;
+    transform: rotateY(180deg); /* Starts hidden */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    color: #f2cc8f;
+    border-color: #8a5a44; /* Different border color for back */
+}
+
+.card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
+    -webkit-backface-visibility: hidden; /* CRITICAL: Hides the side not facing you */
     backface-visibility: hidden;
-    background-color: #0b130b; 
-    transform: rotateY(180deg); 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 4px solid #f2cc8f;
-    border-radius: 15px;
+    border: 8px solid #f2cc8f;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px #000;
+    overflow: hidden;
 }
 
 /* Ensure the wrapper has a set height since children are absolute */
@@ -725,35 +723,28 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 .card-img-wrap {
     width: 100%;
-    height: 70%;
+    height: 250px; /* Fixed height for consistency */
     border: 4px solid #000;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    z-index: 2;
-    box-shadow: inset 0 0 15px #000;
+    margin-top: 10px;
 }
 
 .card-img-wrap img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: contrast(1.1) brightness(1.1);
+    object-fit: cover; /* Prevents squishing */
 }
-
 .char-name-text {
-    margin-top: 15px;
-    padding: 5px 25px;
-    background: linear-gradient(to right, #48cae4, #0077b6);
-    border: 3px solid #caf0f8;
-    border-radius: 5px;
+    margin-top: auto;
+    padding: 8px 20px;
+    background: #48cae4;
+    border: 2px solid #fff;
     font-family: 'Press Start 2P';
-    font-size: 0.7rem !important;
-    color: #fff !important;
+    font-size: 0.7rem;
+    color: #fff;
     text-shadow: 2px 2px #000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 5;
-    letter-spacing: 1px;
+    width: 90%;
 }
 
 /* HEADER WRAPPER - Adjusted for no buffs */
