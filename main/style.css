@@ -384,3 +384,23 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     box-shadow: none !important;
     text-shadow: none !important;         /* Fixes double-text */
 }
+
+/* --- LAYOUT FIX: Keep images at the top and centered --- */
+.tab-content {
+    display: block !important;
+    min-height: auto !important; /* Removes unnecessary empty space */
+}
+
+.tab-pane .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the images in the row */
+    align-items: flex-start; /* Forces them to stay at the top */
+}
+
+/* Ensure images don't stretch weirdly */
+.themed-img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
