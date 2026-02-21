@@ -440,29 +440,28 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 .equipment-grid {
     position: relative;
     width: 100%;
-    height: 380px; /* Increased height so items have room to breathe */
+    height: 400px; /* Increased height for better vertical spacing */
     background: rgba(27, 46, 27, 0.5);
     border: 2px solid #4a5d4a;
     border-radius: 10px;
     margin-top: 20px;
-    overflow: visible; /* Allows labels to pop out if needed */
+    overflow: visible; 
 }
 
 .paper-doll-container {
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 0 auto;
 }
 
 .central-silhouette {
-    font-size: 120px;
+    font-size: 140px;
     color: #4a5d4a;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.2;
+    opacity: 0.15;
     z-index: 1;
 }
 
@@ -477,28 +476,54 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     justify-content: center;
     color: #f2cc8f;
     cursor: help;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     z-index: 2;
 }
 
-.equip-slot:hover {
+/* Positioning - Using specific transform combinations to prevent fly-away issues */
+.slot-head { 
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+}
+.slot-weapon { 
+    top: 45%; 
+    left: 15%; 
+}
+.slot-body { 
+    top: 45%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+}
+.slot-accessory { 
+    top: 45%; 
+    right: 15%; 
+}
+.slot-mount { 
+    bottom: 12%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+}
+
+/* Hover Effect - Merging scale with existing translation for centered items */
+.slot-head:hover, .slot-body:hover, .slot-mount:hover {
+    transform: translate(-50%, 0) scale(1.1);
     background: #f2cc8f;
     color: #0b130b;
-    transform: scale(1.1);
     box-shadow: 0 0 15px #f2cc8f;
 }
 
-/* Fix: Matching the class names used in your HTML */
-.slot-head     { top: 10%; left: 50%; transform: translateX(-50%); }
-.slot-weapon   { top: 40%; left: 10%; }
-.slot-body     { top: 40%; left: 50%; transform: translateX(-50%); }
-.slot-accessory { top: 40%; right: 10%; }
-.slot-mount    { bottom: 10%; left: 50%; transform: translateX(-50%); }
+.slot-weapon:hover, .slot-accessory:hover {
+    transform: scale(1.1);
+    background: #f2cc8f;
+    color: #0b130b;
+    box-shadow: 0 0 15px #f2cc8f;
+}
 
-/* Style for the text labels under the icons */
+/* Style for the text labels */
 .slot-label {
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     font-family: 'VT323', monospace;
     font-size: 0.9rem;
     color: #f2cc8f;
@@ -506,25 +531,20 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     white-space: nowrap;
 }
 
-/* Tooltip Container Styling */
-.equip-slot {
-    position: relative; /* Anchor for the tooltip */
-}
-
-/* The actual Tooltip box */
+/* --- TOOLTIP SYSTEM --- */
 .equip-slot::after {
-    content: attr(data-description); /* Pulls text from HTML */
+    content: attr(data-description);
     position: absolute;
-    bottom: 125%; /* Positions it above the icon */
+    bottom: 130%;
     left: 50%;
     transform: translateX(-50%);
-    width: 160px;
+    width: 180px;
     padding: 10px;
     background: #0b130b;
     border: 2px solid #f2cc8f;
     color: #f2cc8f;
     font-family: 'VT323', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-align: center;
     visibility: hidden;
     opacity: 0;
@@ -532,13 +552,13 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     z-index: 99;
     box-shadow: 5px 5px 0px #000;
     pointer-events: none;
+    line-height: 1.2;
 }
 
-/* Triangle pointer for the tooltip */
 .equip-slot::before {
     content: "";
     position: absolute;
-    bottom: 110%;
+    bottom: 115%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 8px;
@@ -549,7 +569,6 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     z-index: 100;
 }
 
-/* Show on Hover */
 .equip-slot:hover::after, 
 .equip-slot:hover::before {
     visibility: visible;
