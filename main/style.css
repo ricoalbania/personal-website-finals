@@ -346,3 +346,43 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     border: 2px solid #f2cc8f;
     color: #f2cc8f;
 }
+
+/* 15. RPG TAB STYLING */
+.rpg-tab {
+    background-color: #1b2e1b !important;
+    color: #a5a58d !important;
+    border: 2px solid #4a5d4a !important;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem !important;
+    margin-right: 5px;
+    border-radius: 0 !important;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.rpg-tab:hover {
+    color: #f2cc8f !important;
+    border-color: #f2cc8f !important;
+    transform: translateY(-2px);
+}
+
+.rpg-tab.active {
+    background-color: #f2cc8f !important;
+    color: #0b130b !important;
+    border: 2px solid #000 !important;
+    box-shadow: none !important;
+    transform: translateY(2px);
+}
+
+.tab-content {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #f2cc8f;
+    padding: 20px;
+    min-height: 200px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* Ensure progress bars inside tabs still look good */
+.tab-pane .progress-rpg {
+    margin-bottom: 15px;
+}
