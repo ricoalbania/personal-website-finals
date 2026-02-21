@@ -637,3 +637,49 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
         left: -41px; 
     }
 }
+
+/* --- 3D CARD FLIP --- */
+.char-card-container {
+    perspective: 1000px; /* Gives the 3D depth */
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+/* This class is toggled by JavaScript */
+.card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border: 4px solid #f2cc8f;
+    background-color: #1b2e1b;
+    box-shadow: 8px 8px 0px #000;
+}
+
+.card-back {
+    background-color: #0b130b; /* Darker back color */
+    transform: rotateY(180deg); /* Start the back side already rotated */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ensure the wrapper has a set height since children are absolute */
+.char-card-container {
+    height: 380px; 
+    width: 280px;
+}
