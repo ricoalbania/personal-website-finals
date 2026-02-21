@@ -32,7 +32,7 @@ h2 {
 }
 h4 { font-size: 0.9rem; }
 
-/* 4. STATUS BADGES & UI ELEMENTS */
+/* NEW: STATUS BADGES */
 .status-badge {
     font-family: 'VT323';
     font-size: 1.1rem;
@@ -41,16 +41,9 @@ h4 { font-size: 0.9rem; }
     padding: 2px 10px;
     color: #f2cc8f;
     box-shadow: 2px 2px 0px #000;
-    animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.8; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.8; transform: scale(1); }
-}
-
-/* 5. HEADER & NAVIGATION */
+/* 4. HEADER & NAVIGATION */
 .header-footer-custom {
     background: linear-gradient(180deg, #1b2e1b 0%, #0b130b 100%);
     border-bottom: 6px solid #4a5d4a; 
@@ -75,7 +68,7 @@ h4 { font-size: 0.9rem; }
     transform: translateY(-2px);
 }
 
-/* 6. CONTENT CARDS & DECORATIONS */
+/* 5. CONTENT CARDS */
 .content-card {
     background: rgba(27, 46, 27, 0.9) !important; 
     backdrop-filter: blur(5px);
@@ -100,7 +93,7 @@ h4 { font-size: 0.9rem; }
     border: 2px solid #f2cc8f;
 }
 
-/* 7. IMAGES & GALLERY */
+/* 6. IMAGES & GALLERY */
 .themed-img {
     border: 4px solid #a5a58d;
     padding: 5px;
@@ -116,7 +109,7 @@ h4 { font-size: 0.9rem; }
     box-shadow: 8px 8px 0px #000;
 }
 
-/* 8. CAROUSEL FIXES */
+/* 7. CAROUSEL FIX */
 .carousel {
     border: 6px solid #4a5d4a;
     background-color: #000;
@@ -129,15 +122,7 @@ h4 { font-size: 0.9rem; }
     object-fit: cover;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #f2cc8f;
-    border: 3px solid #000;
-    padding: 20px;
-    border-radius: 0; 
-}
-
-/* 9. RPG PROGRESS BARS */
+/* 8. RPG PROGRESS BARS */
 .progress-rpg {
     background-color: #000;
     border: 3px solid #4a5d4a;
@@ -145,20 +130,13 @@ h4 { font-size: 0.9rem; }
     border-radius: 0;
     margin-bottom: 20px; 
     box-shadow: inset 2px 2px 5px #000;
-    overflow: visible;
 }
 
-.progress-bar {
-    animation: fillBar 2s ease-out forwards;
-}
+.hp-bar { background-color: #e63946 !important; border-right: 4px solid #9b1c25; }
+.mp-bar { background-color: #457b9d !important; border-right: 4px solid #1d3557; }
+.exp-bar { background-color: #f1faee !important; border-right: 4px solid #a8dadc; }
 
-@keyframes fillBar { from { width: 0; } }
-
-.hp-bar { background-color: #e63946 !important; border-right: 4px solid #9b1c25; animation-delay: 0.2s; }
-.mp-bar { background-color: #457b9d !important; border-right: 4px solid #1d3557; animation-delay: 0.5s; }
-.exp-bar { background-color: #f1faee !important; border-right: 4px solid #a8dadc; animation-delay: 0.8s; }
-
-/* 10. INVENTORY & RESOURCE CARDS */
+/* 9. INVENTORY CARDS & ITEM SLOTS */
 .item-slot {
     background: #000;
     width: 60px;
@@ -192,110 +170,206 @@ h4 { font-size: 0.9rem; }
     border-right: 3px solid #1b2e1b;
 }
 
-/* 11. CHARACTER CARD (INDEX PAGE) */
+.resource-card:hover .item-slot {
+    transform: scale(1.1);
+}
+
+.resource-card h6 { 
+    color: #f2cc8f; 
+    font-family: 'VT323', monospace; 
+    font-size: 1.5rem; 
+}
+
+/* 10. SCROLLBAR & MISC */
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: #0b130b; }
+::-webkit-scrollbar-thumb { 
+    background: #4a5d4a; 
+    border: 3px solid #0b130b; 
+    box-shadow: inset 0 0 5px #f2cc8f;
+}
+
+hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
+
+#guestbook iframe {
+    border: 6px solid #4a5d4a;
+    outline: 2px solid #f2cc8f;
+    outline-offset: -8px;
+}
+
+/* 11. CAROUSEL CONTROLS */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #f2cc8f;
+    border: 3px solid #000;
+    padding: 20px;
+    border-radius: 0; 
+    filter: invert(0);
+}
+
+/* 12. LEAF SYSTEM */
+#leaf-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+.leaf {
+    position: absolute;
+    color: rgba(74, 93, 74, 0.4); 
+    font-size: 24px;
+    opacity: 0;
+    animation: fall 10s linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+}
+
+/* 13. QUEST OVERLAYS */
+.gallery-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.col-md-4:hover::before {
+    content: "VIEW MEMORY";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(11, 19, 11, 0.9);
+    color: #f2cc8f;
+    padding: 8px 15px;
+    font-family: 'Press Start 2P';
+    font-size: 0.5rem;
+    z-index: 5;
+    pointer-events: none;
+    border: 2px solid #f2cc8f;
+    box-shadow: 4px 4px 0px #000;
+}
+
+/* 14. PROGRESS BAR ANIMATIONS */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+.progress-bar {
+    animation: fillBar 2s ease-out forwards;
+}
+
+.hp-bar { animation-delay: 0.2s; }
+.mp-bar { animation-delay: 0.5s; }
+.exp-bar { animation-delay: 0.8s; }
+
+/* Status Badge Pulse Effect */
+.status-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+/* CHARACTER CARD CONTAINER */
 .char-card-container {
     position: relative;
     width: 240px;
     margin: 0 auto;
     padding: 10px;
-    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37);
+    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37); 
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.3);
     transition: transform 0.3s ease;
 }
 
-.char-card-container:hover { transform: translateY(-10px) rotate(2deg); }
+.char-card-container:hover {
+    transform: translateY(-10px) rotate(2deg); 
+}
 
 .card-img-wrap {
-    width: 100%; height: 280px;
-    overflow: hidden; border-radius: 8px;
-    border: 4px solid #2b2d42; background-color: #333;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 4px solid #2b2d42;
+    background-color: #333;
 }
 
-.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .lvl-badge {
-    position: absolute; top: -10px; right: -10px;
-    background: #e76f51; color: white;
-    font-family: 'Press Start 2P', cursive; font-size: 10px;
-    padding: 8px; border: 3px solid #fff; border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e76f51;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 8px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 2;
 }
 
-/* 12. LEAF SYSTEM */
-#leaf-container {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: -1; 
+.element-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f2cc8f;
+    color: #f2cc8f;
 }
 
-.leaf {
-    position: absolute; color: rgba(74, 93, 74, 0.4); 
-    font-size: 24px; animation: fall 10s linear infinite;
-}
+/* 15. THE FIX FOR WHITE BOXES & DOUBLE TEXT */
+/* This section ensures Quest/Stat tabs look correct */
 
-@keyframes fall {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.8; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-}
-
-/* 13. QUEST OVERLAYS & MODALS */
-.gallery-trigger { position: relative; cursor: pointer; }
-
-.col-md-4:hover::before {
-    content: "VIEW MEMORY";
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(11, 19, 11, 0.9);
-    color: #f2cc8f; padding: 8px 15px;
-    font-family: 'Press Start 2P'; font-size: 0.5rem;
-    z-index: 5; pointer-events: none;
-    border: 2px solid #f2cc8f; box-shadow: 4px 4px 0px #000;
-}
-
-/* 14. THE FINAL FIXED TAB SYSTEM (NO DOUBLE TEXT) */
-.nav-pills .rpg-tab {
+.nav-pills .nav-link {
     background-color: #1b2e1b !important;
     color: #f2cc8f !important;
     border: 2px solid #4a5d4a !important;
     margin: 5px;
-    font-size: 0.7rem;
-    padding: 12px 20px !important;
-    border-radius: 0 !important;
     font-family: 'Press Start 2P', cursive;
-    transition: all 0.1s;
+    font-size: 0.7rem !important;
+    border-radius: 0 !important;
     box-shadow: 4px 4px 0px #000;
-    text-shadow: none !important; /* FIXED: Prevent overlap */
-}
-
-.nav-pills .rpg-tab:hover:not(.active) {
-    background-color: #2d4a2d !important;
-    transform: translateY(-2px);
+    text-shadow: none !important; /* Fixes double text glitch */
 }
 
 .nav-pills .nav-link.active {
-    background-color: #f2cc8f !important; 
-    color: #0b130b !important; /* FIXED: Readability */
+    background-color: #f2cc8f !important; /* Fixes white box */
+    color: #0b130b !important;            /* Fixes readability */
     border: 2px solid #000 !important;
     box-shadow: none !important;
-    transform: translate(2px, 2px) !important;
-    text-shadow: none !important; /* FIXED: Clarity */
+    transform: translate(2px, 2px);
+    text-shadow: none !important;
 }
 
 .tab-content {
     background: rgba(0, 0, 0, 0.4);
-    border: 4px solid #4a5d4a;
-    outline: 2px solid #f2cc8f;
-    outline-offset: -10px;
-    padding: 30px;
-    margin-top: 20px;
+    border: 2px solid #f2cc8f;
+    padding: 20px;
+    min-height: 200px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
 }
-
-/* 15. SCROLLBAR & MISC */
-::-webkit-scrollbar { width: 14px; }
-::-webkit-scrollbar-track { background: #0b130b; }
-::-webkit-scrollbar-thumb { 
-    background: #4a5d4a; border: 3px solid #0b130b; 
-    box-shadow: inset 0 0 5px #f2cc8f;
-}
-
-hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
