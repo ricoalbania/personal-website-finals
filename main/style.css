@@ -755,3 +755,30 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     z-index: 5;
     letter-spacing: 1px;
 }
+
+/* HEADER WRAPPER - Adjusted for no buffs */
+.header-footer-custom {
+    background: linear-gradient(180deg, #0b130b 0%, #1b2e1b 100%);
+    border-bottom: 4px solid #f2cc8f;
+    padding: 50px 20px !important; /* Slightly reduced padding */
+    position: relative;
+    overflow: hidden;
+}
+
+/* KEEP the Title and Nav styles from the previous step */
+.display-4.fw-bold {
+    font-family: 'Press Start 2P', cursive;
+    color: #f2cc8f;
+    text-shadow: 4px 4px 0px #000, 0 0 20px rgba(242, 204, 143, 0.5);
+    letter-spacing: 5px;
+    margin-bottom: 0;
+}
+
+.header-footer-custom .lead {
+    font-family: 'VT323', monospace;
+    color: #a5a58d;
+    font-size: 1.6rem; /* Made slightly larger to fill space */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
