@@ -386,3 +386,51 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 .tab-pane .progress-rpg {
     margin-bottom: 15px;
 }
+
+/* --- QUEST CATEGORY TABS (RPG STYLE) --- */
+.nav-pills .rpg-tab {
+    background-color: #1b2e1b !important; /* Matches your header/footer */
+    color: #f2cc8f !important;            /* RPG Gold text */
+    border: 2px solid #4a5d4a !important; /* Moss green border */
+    margin: 5px;
+    font-size: 0.7rem;
+    padding: 10px 20px;
+    border-radius: 0 !important;          /* Sharp corners for retro look */
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0px #000;         /* 8-bit shadow effect */
+}
+
+/* When the tab is hovered */
+.nav-pills .rpg-tab:hover {
+    color: #ffffff !important;
+    border-color: #f2cc8f !important;
+    transform: translateY(-2px);
+}
+
+/* When the tab is selected/active */
+.nav-pills .nav-link.active {
+    background-color: #f2cc8f !important; /* Gold background */
+    color: #0b130b !important;            /* Dark text */
+    border: 2px solid #000 !important;
+    box-shadow: none !important;          /* "Pressed" look */
+    transform: translateY(2px);
+}
+
+/* --- GALLERY IMAGE ENHANCEMENTS --- */
+.tab-content .themed-img {
+    border: 4px solid #4a5d4a;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.tab-content .themed-img:hover {
+    transform: scale(1.05);               /* Slight zoom on hover */
+    border-color: #f2cc8f;                /* Glows gold on hover */
+    z-index: 5;
+}
+
+/* Ensures the tab section doesn't jump around when switching */
+.tab-pane {
+    min-height: 300px;
+}

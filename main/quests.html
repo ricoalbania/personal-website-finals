@@ -70,37 +70,54 @@
     </div>
   </div>
 
-  <div id="gallery-section" class="row g-4 mt-5">
-  <div class="col-12 text-start">
-    <h4 class="fw-bold mb-3" style="color: #6B705C; border-left: 5px solid #A5A58D; padding-left: 15px;">Quest Memories</h4>
-  </div>
+  <hr class="my-5">
 
-  <div class="col-md-4 col-sm-6">
-    <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc4.jpg?raw=true" 
-         class="img-fluid themed-img gallery-trigger" 
-         data-bs-toggle="modal" 
-         data-bs-target="#galleryModal1" 
-         alt="APC 4">
-  </div>
+  <div class="row g-4 mt-2">
+    <div class="col-12 text-center">
+      <h2 class="mb-4" style="color: #6B705C; border-left: 5px solid #A5A58D; padding-left: 15px; display: inline-block;">Quest Memories</h2>
+      
+      <ul class="nav nav-pills mb-4 justify-content-center" id="questGalleryTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active rpg-tab" data-bs-toggle="tab" data-bs-target="#solo-quest" type="button">MYSELF</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#coop-quest" type="button">CO-OP (GF)</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#party-quest" type="button">THE PARTY</button>
+        </li>
+      </ul>
 
-  <div class="col-md-4 col-sm-6">
-    <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc5.jpg?raw=true" 
-         class="img-fluid themed-img gallery-trigger" 
-         data-bs-toggle="modal" 
-         data-bs-target="#galleryModal2" 
-         alt="APC 5">
-  </div>
+      <div class="tab-content" id="questGalleryContent">
+        <div class="tab-pane fade show active" id="solo-quest">
+          <div class="row g-4">
+            <div class="col-md-4 col-sm-6"><img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc4.jpg?raw=true" class="img-fluid themed-img" alt="Myself 1"></div>
+            <div class="col-md-4 col-sm-6"><img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc5.jpg?raw=true" class="img-fluid themed-img" alt="Myself 2"></div>
+            <div class="col-md-4 col-sm-6"><img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc6.jpg?raw=true" class="img-fluid themed-img" alt="Myself 3"></div>
+          </div>
+        </div>
 
-  <div class="col-md-4 col-sm-6">
-    <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/2_RRA_Customize_My_Website/apc6.jpg?raw=true" 
-         class="img-fluid themed-img gallery-trigger" 
-         data-bs-toggle="modal" 
-         data-bs-target="#galleryModal3" 
-         alt="APC 6">
+        <div class="tab-pane fade" id="coop-quest">
+          <div class="row g-4">
+            <div class="col-md-4 col-sm-6"><img src="../gf1.jpg" class="img-fluid themed-img" alt="GF 1"></div>
+            <div class="col-md-4 col-sm-6"><img src="../gf2.jpg" class="img-fluid themed-img" alt="GF 2"></div>
+            <div class="col-md-4 col-sm-6"><img src="../gf3.jpg" class="img-fluid themed-img" alt="GF 3"></div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="party-quest">
+          <div class="row g-4">
+            <div class="col-md-4 col-sm-6"><img src="../friends1.jpg" class="img-fluid themed-img" alt="Friends 1"></div>
+            <div class="col-md-4 col-sm-6"><img src="../friends2.jpg" class="img-fluid themed-img" alt="Friends 2"></div>
+            <div class="col-md-4 col-sm-6"><img src="../friends3.jpg" class="img-fluid themed-img" alt="Friends 3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="header-footer-custom text-center">
+<div class="header-footer-custom text-center mt-5">
   <p class="mb-0">© 2026 PLAYER 1 | Questing through Code</p>
 </div>
 
