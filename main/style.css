@@ -32,7 +32,7 @@ h2 {
 }
 h4 { font-size: 0.9rem; }
 
-/* NEW: STATUS BADGES */
+/* 4. STATUS BADGES & UI ELEMENTS */
 .status-badge {
     font-family: 'VT323';
     font-size: 1.1rem;
@@ -41,9 +41,16 @@ h4 { font-size: 0.9rem; }
     padding: 2px 10px;
     color: #f2cc8f;
     box-shadow: 2px 2px 0px #000;
+    animation: pulse 2s infinite;
 }
 
-/* 4. HEADER & NAVIGATION */
+@keyframes pulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.8; transform: scale(1); }
+}
+
+/* 5. HEADER & NAVIGATION */
 .header-footer-custom {
     background: linear-gradient(180deg, #1b2e1b 0%, #0b130b 100%);
     border-bottom: 6px solid #4a5d4a; 
@@ -68,7 +75,7 @@ h4 { font-size: 0.9rem; }
     transform: translateY(-2px);
 }
 
-/* 5. CONTENT CARDS */
+/* 6. CONTENT CARDS & DECORATIONS */
 .content-card {
     background: rgba(27, 46, 27, 0.9) !important; 
     backdrop-filter: blur(5px);
@@ -93,7 +100,7 @@ h4 { font-size: 0.9rem; }
     border: 2px solid #f2cc8f;
 }
 
-/* 6. IMAGES & GALLERY */
+/* 7. IMAGES & GALLERY */
 .themed-img {
     border: 4px solid #a5a58d;
     padding: 5px;
@@ -109,7 +116,7 @@ h4 { font-size: 0.9rem; }
     box-shadow: 8px 8px 0px #000;
 }
 
-/* 7. CAROUSEL FIX */
+/* 8. CAROUSEL FIXES */
 .carousel {
     border: 6px solid #4a5d4a;
     background-color: #000;
@@ -122,7 +129,15 @@ h4 { font-size: 0.9rem; }
     object-fit: cover;
 }
 
-/* 8. RPG PROGRESS BARS */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #f2cc8f;
+    border: 3px solid #000;
+    padding: 20px;
+    border-radius: 0; 
+}
+
+/* 9. RPG PROGRESS BARS */
 .progress-rpg {
     background-color: #000;
     border: 3px solid #4a5d4a;
@@ -130,13 +145,20 @@ h4 { font-size: 0.9rem; }
     border-radius: 0;
     margin-bottom: 20px; 
     box-shadow: inset 2px 2px 5px #000;
+    overflow: visible;
 }
 
-.hp-bar { background-color: #e63946 !important; border-right: 4px solid #9b1c25; }
-.mp-bar { background-color: #457b9d !important; border-right: 4px solid #1d3557; }
-.exp-bar { background-color: #f1faee !important; border-right: 4px solid #a8dadc; }
+.progress-bar {
+    animation: fillBar 2s ease-out forwards;
+}
 
-/* 9. INVENTORY CARDS & ITEM SLOTS */
+@keyframes fillBar { from { width: 0; } }
+
+.hp-bar { background-color: #e63946 !important; border-right: 4px solid #9b1c25; animation-delay: 0.2s; }
+.mp-bar { background-color: #457b9d !important; border-right: 4px solid #1d3557; animation-delay: 0.5s; }
+.exp-bar { background-color: #f1faee !important; border-right: 4px solid #a8dadc; animation-delay: 0.8s; }
+
+/* 10. INVENTORY & RESOURCE CARDS */
 .item-slot {
     background: #000;
     width: 60px;
@@ -170,267 +192,110 @@ h4 { font-size: 0.9rem; }
     border-right: 3px solid #1b2e1b;
 }
 
-.resource-card:hover .item-slot {
-    transform: scale(1.1);
-}
-
-.resource-card h6 { 
-    color: #f2cc8f; 
-    font-family: 'VT323', monospace; 
-    font-size: 1.5rem; 
-}
-
-/* 10. SCROLLBAR & MISC */
-::-webkit-scrollbar { width: 14px; }
-::-webkit-scrollbar-track { background: #0b130b; }
-::-webkit-scrollbar-thumb { 
-    background: #4a5d4a; 
-    border: 3px solid #0b130b; 
-    box-shadow: inset 0 0 5px #f2cc8f;
-}
-
-hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
-
-#guestbook iframe {
-    border: 6px solid #4a5d4a;
-    outline: 2px solid #f2cc8f;
-    outline-offset: -8px;
-}
-
-/* 11. CAROUSEL CONTROLS */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #f2cc8f;
-    border: 3px solid #000;
-    padding: 20px;
-    border-radius: 0; 
-    filter: invert(0);
-}
-
-/* 12. LEAF SYSTEM */
-#leaf-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1; 
-}
-
-.leaf {
-    position: absolute;
-    color: rgba(74, 93, 74, 0.4); 
-    font-size: 24px;
-    opacity: 0;
-    animation: fall 10s linear infinite;
-    user-select: none;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
-    100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
-}
-
-/* 13. QUEST OVERLAYS */
-.gallery-trigger {
-    position: relative;
-    cursor: pointer;
-}
-
-.col-md-4:hover::before {
-    content: "VIEW MEMORY";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(11, 19, 11, 0.9);
-    color: #f2cc8f;
-    padding: 8px 15px;
-    font-family: 'Press Start 2P';
-    font-size: 0.5rem;
-    z-index: 5;
-    pointer-events: none;
-    border: 2px solid #f2cc8f;
-    box-shadow: 4px 4px 0px #000;
-}
-
-/* 14. PROGRESS BAR ANIMATIONS */
-@keyframes fillBar {
-    from { width: 0; }
-}
-
-/* Apply the animation to all progress bars */
-.progress-bar {
-    animation: fillBar 2s ease-out forwards;
-}
-
-/* Specific delays to make them fill one after another */
-.hp-bar { animation-delay: 0.2s; }
-.mp-bar { animation-delay: 0.5s; }
-.exp-bar { animation-delay: 0.8s; }
-
-/* Status Badge Pulse Effect */
-.status-badge {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.8; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.8; transform: scale(1); }
-}
-
-/* CHARACTER CARD CONTAINER */
+/* 11. CHARACTER CARD (INDEX PAGE) */
 .char-card-container {
     position: relative;
     width: 240px;
     margin: 0 auto;
     padding: 10px;
-    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37); /* Gold Rarity border */
+    background: linear-gradient(135deg, #d4af37, #f2cc8f, #d4af37);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
 
-.char-card-container:hover {
-    transform: translateY(-10px) rotate(2deg); /* Card hover tilt */
-}
+.char-card-container:hover { transform: translateY(-10px) rotate(2deg); }
 
-/* THE ACTUAL IMAGE CLIP */
 .card-img-wrap {
-    width: 100%;
-    height: 280px;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 4px solid #2b2d42;
-    background-color: #333;
+    width: 100%; height: 280px;
+    overflow: hidden; border-radius: 8px;
+    border: 4px solid #2b2d42; background-color: #333;
 }
 
-.card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-/* LEVEL BADGE OVERLAY */
 .lvl-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #e76f51;
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-    padding: 8px;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 2;
+    position: absolute; top: -10px; right: -10px;
+    background: #e76f51; color: white;
+    font-family: 'Press Start 2P', cursive; font-size: 10px;
+    padding: 8px; border: 3px solid #fff; border-radius: 50%;
 }
 
-/* ELEMENTAL ICON (Optional) */
-.element-icon {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(0,0,0,0.7);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #f2cc8f;
-    color: #f2cc8f;
+/* 12. LEAF SYSTEM */
+#leaf-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: -1; 
 }
 
-/* 15. RPG TAB STYLING */
-.rpg-tab {
+.leaf {
+    position: absolute; color: rgba(74, 93, 74, 0.4); 
+    font-size: 24px; animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* 13. QUEST OVERLAYS & MODALS */
+.gallery-trigger { position: relative; cursor: pointer; }
+
+.col-md-4:hover::before {
+    content: "VIEW MEMORY";
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(11, 19, 11, 0.9);
+    color: #f2cc8f; padding: 8px 15px;
+    font-family: 'Press Start 2P'; font-size: 0.5rem;
+    z-index: 5; pointer-events: none;
+    border: 2px solid #f2cc8f; box-shadow: 4px 4px 0px #000;
+}
+
+/* 14. THE FINAL FIXED TAB SYSTEM (NO DOUBLE TEXT) */
+.nav-pills .rpg-tab {
     background-color: #1b2e1b !important;
-    color: #a5a58d !important;
+    color: #f2cc8f !important;
     border: 2px solid #4a5d4a !important;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem !important;
-    margin-right: 5px;
+    margin: 5px;
+    font-size: 0.7rem;
+    padding: 12px 20px !important;
     border-radius: 0 !important;
-    transition: all 0.2s;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.1s;
     box-shadow: 4px 4px 0px #000;
+    text-shadow: none !important; /* FIXED: Prevent overlap */
 }
 
-.rpg-tab:hover {
-    color: #f2cc8f !important;
-    border-color: #f2cc8f !important;
+.nav-pills .rpg-tab:hover:not(.active) {
+    background-color: #2d4a2d !important;
     transform: translateY(-2px);
 }
 
-.rpg-tab.active {
-    background-color: #f2cc8f !important;
-    color: #0b130b !important;
+.nav-pills .nav-link.active {
+    background-color: #f2cc8f !important; 
+    color: #0b130b !important; /* FIXED: Readability */
     border: 2px solid #000 !important;
     box-shadow: none !important;
-    transform: translateY(2px);
+    transform: translate(2px, 2px) !important;
+    text-shadow: none !important; /* FIXED: Clarity */
 }
 
 .tab-content {
     background: rgba(0, 0, 0, 0.4);
-    border: 2px solid #f2cc8f;
-    padding: 20px;
-    min-height: 200px;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
-}
-
-/* Ensure progress bars inside tabs still look good */
-.tab-pane .progress-rpg {
-    margin-bottom: 15px;
-}
-
-/* --- QUEST CATEGORY TABS (RPG STYLE) --- */
-.nav-pills .rpg-tab {
-    background-color: #1b2e1b !important; /* Matches your header/footer */
-    color: #f2cc8f !important;            /* RPG Gold text */
-    border: 2px solid #4a5d4a !important; /* Moss green border */
-    margin: 5px;
-    font-size: 0.7rem;
-    padding: 10px 20px;
-    border-radius: 0 !important;          /* Sharp corners for retro look */
-    font-family: 'Press Start 2P', cursive;
-    transition: all 0.2s;
-    box-shadow: 4px 4px 0px #000;         /* 8-bit shadow effect */
-}
-
-/* When the tab is hovered */
-.nav-pills .rpg-tab:hover {
-    color: #ffffff !important;
-    border-color: #f2cc8f !important;
-    transform: translateY(-2px);
-}
-
-/* When the tab is selected/active */
-.nav-pills .nav-link.active {
-    background-color: #f2cc8f !important; /* Gold background */
-    color: #0b130b !important;            /* Dark text */
-    border: 2px solid #000 !important;
-    box-shadow: none !important;          /* "Pressed" look */
-    transform: translateY(2px);
-}
-
-/* --- GALLERY IMAGE ENHANCEMENTS --- */
-.tab-content .themed-img {
     border: 4px solid #4a5d4a;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    cursor: pointer;
+    outline: 2px solid #f2cc8f;
+    outline-offset: -10px;
+    padding: 30px;
+    margin-top: 20px;
 }
 
-.tab-content .themed-img:hover {
-    transform: scale(1.05);               /* Slight zoom on hover */
-    border-color: #f2cc8f;                /* Glows gold on hover */
-    z-index: 5;
+/* 15. SCROLLBAR & MISC */
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: #0b130b; }
+::-webkit-scrollbar-thumb { 
+    background: #4a5d4a; border: 3px solid #0b130b; 
+    box-shadow: inset 0 0 5px #f2cc8f;
 }
 
-/* Ensures the tab section doesn't jump around when switching */
-.tab-pane {
-    min-height: 300px;
-}
+hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
