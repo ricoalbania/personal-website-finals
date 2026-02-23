@@ -751,13 +751,20 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     width: 90%;
 }
 
-/* HEADER WRAPPER - Adjusted for no buffs */
 .header-footer-custom {
-    background: linear-gradient(180deg, #0b130b 0%, #1b2e1b 100%);
+    /* Use the forest image with a dark gradient so text is readable */
+    background: linear-gradient(rgba(11, 19, 11, 0.4), rgba(11, 19, 11, 0.8)), 
+                url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071') !important;
+    background-size: cover;
+    background-position: center 20%;
+    padding: 80px 20px !important;
     border-bottom: 4px solid #f2cc8f;
-    padding: 50px 20px !important; /* Slightly reduced padding */
     position: relative;
     overflow: hidden;
+}
+
+.header-footer-custom h1 {
+    text-shadow: 0 0 15px rgba(242, 204, 143, 0.7), 4px 4px 0px #000 !important;
 }
 
 .display-4 {
