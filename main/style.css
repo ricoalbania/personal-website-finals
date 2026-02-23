@@ -1193,3 +1193,20 @@ body {
     font-size: 1.5rem;
     letter-spacing: 2px;
 }
+
+.blink-text {
+    animation: pulse-opacity 1.5s infinite;
+}
+
+@keyframes pulse-opacity {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Ensure the bar stays full once it finishes */
+.pixel-progress-inner.finished {
+    width: 100% !important;
+    animation: none;
+    box-shadow: 0 0 10px #81b29a;
+}

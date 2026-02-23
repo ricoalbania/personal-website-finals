@@ -29,12 +29,15 @@
             </button>
         </div>
         
-        <div class="loading-bar-container mt-5">
-            <div class="loading-text mb-2">LOADING WORLD...</div>
-            <div class="pixel-progress-outer">
-                <div class="pixel-progress-inner"></div>
-            </div>
-        </div>
+<div class="loading-bar-container mt-5">
+    <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
+    <div class="pixel-progress-outer">
+        <div id="loading-bar-fill" class="pixel-progress-inner"></div>
+    </div>
+    <div id="press-key-prompt" class="mt-4" style="display: none;">
+        <p class="blink-text" style="font-family: 'Press Start 2P'; color: #f2cc8f; font-size: 0.8rem;">- PRESS ANY KEY TO START -</p>
+    </div>
+</div>
     </div>
 </div>
 
@@ -256,10 +259,35 @@ function createLeaf() {
 setInterval(createLeaf, 800);
 
 window.onload = function() {
+    // Check if game already started
     if (sessionStorage.getItem('gameStarted') === 'true') {
         const screen = document.getElementById('landing-screen');
-        if (screen) { screen.style.display = 'none'; }
+        if (screen) screen.style.display = 'none';
+        return;
     }
+
+    // Simulate Loading Sequence
+    const bar = document.getElementById('loading-bar-fill');
+    const status = document.getElementById('loading-status');
+    const prompt = document.getElementById('press-key-prompt');
+    const startBtnContainer = document.querySelector('.rpg-start-btn').parentElement;
+
+    // Hide start button initially
+    startBtnContainer.style.opacity = '0';
+
+    setTimeout(() => {
+        bar.classList.add('finished');
+        status.innerText = "WORLD LOADED";
+        prompt.style.display = "block";
+        startBtnContainer.style.transition = "opacity 0.5s";
+        startBtnContainer.style.opacity = '1';
+
+        // Listener for "Press Any Key"
+        window.addEventListener('keydown', function handleFirstKey() {
+            startGame();
+            window.removeEventListener('keydown', handleFirstKey);
+        }, { once: true });
+    }, 3000); // 3 seconds to match the loading animation
 };
 
 function toggleMenu() {
