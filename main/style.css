@@ -931,3 +931,92 @@ body {
     50% { box-shadow: 0 0 40px rgba(242, 204, 143, 0.8), 0 8px 0px #4a2c1d; }
     100% { box-shadow: 0 0 20px rgba(242, 204, 143, 0.5), 0 8px 0px #4a2c1d; }
 }
+
+/* SYSTEM MENU POSITIONING */
+.system-menu-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* THE GEAR BUTTON */
+.system-btn {
+    width: 60px;
+    height: 60px;
+    background: #f2cc8f;
+    border: 4px solid #4a2c1d;
+    border-radius: 50%;
+    color: #4a2c1d;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #4a2c1d, 0 0 15px rgba(242, 204, 143, 0.4);
+    transition: transform 0.1s;
+}
+
+.system-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 #4a2c1d;
+}
+
+/* THE DROPDOWN MENU */
+.system-dropdown {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 220px;
+    background: rgba(11, 19, 11, 0.95);
+    border: 3px solid #f2cc8f;
+    padding: 15px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.system-dropdown.active {
+    display: flex; /* Shown when gear is clicked */
+}
+
+.menu-header {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    color: #f2cc8f;
+    border-bottom: 1px solid #f2cc8f;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.system-dropdown button {
+    background: transparent;
+    border: 1px solid rgba(242, 204, 143, 0.3);
+    color: #fff;
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    padding: 8px;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.system-dropdown button:hover {
+    background: rgba(242, 204, 143, 0.1);
+    border-color: #f2cc8f;
+    color: #f2cc8f;
+}
+
+/* Styling for the confirmation buttons specifically */
+#menu-confirm-view button {
+    font-weight: bold;
+    justify-content: center;
+}
+
+#menu-confirm-view .text-danger:hover {
+    background: rgba(220, 53, 69, 0.2) !important;
+    border-color: #dc3545 !important;
+}
+
+/* Ensure the dropdown doesn't jump in size when switching views */
+.system-dropdown {
+    min-height: 160px;
+}

@@ -238,6 +238,116 @@ window.onload = function() {
         }
     }
 };
+
+// Toggle the visibility of the system menu
+function toggleMenu() {
+    const menu = document.getElementById('system-dropdown');
+    menu.classList.toggle('active');
+}
+
+// The Log Out function: Clears memory and reloads page
+function logout() {
+    // 1. Play a click sound
+    const clickSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+    clickSound.play();
+
+    // 2. Clear the "Start" state from browser memory
+    sessionStorage.removeItem('gameStarted');
+
+    // 3. Reload the page to show the Title Screen again
+    setTimeout(() => {
+        window.location.reload();
+    }, 300);
+}
+
+// Close menu if clicking outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.system-btn') && !event.target.closest('.system-dropdown')) {
+        const dropdown = document.getElementById('system-dropdown');
+        if (dropdown.classList.contains('active')) {
+            dropdown.classList.remove('active');
+        }
+    }
+}
+
+// Shows the "Are you sure?" view
+function showConfirm() {
+    document.getElementById('menu-main-view').style.display = 'none';
+    document.getElementById('menu-confirm-view').style.display = 'block';
+}
+
+// Goes back to the main system menu
+function hideConfirm() {
+    document.getElementById('menu-main-view').style.display = 'block';
+    document.getElementById('menu-confirm-view').style.display = 'none';
+}
+
+// Modified toggleMenu to always reset to the main view when opening/closing
+function toggleMenu() {
+    const menu = document.getElementById('system-dropdown');
+    menu.classList.toggle('active');
+    if (!menu.classList.contains('active')) {
+        hideConfirm(); // Reset to main view for next time
+    }
+}
+
+// Update logout to include a "fading" effect for the music
+function logout() {
+    sessionStorage.removeItem('gameStarted');
+    
+    // Quick visual feedback
+    document.body.style.filter = "brightness(0.2)";
+    document.body.style.transition = "filter 0.5s";
+    
+    setTimeout(() => {
+        window.location.reload();
+    }, 500);
+}
+
 </script>
+
+
+<div class="system-menu-container">
+    <button class="system-btn" onclick="toggleMenu()" title="System Menu">
+        <i class="fas fa-cog"></i>
+    </button>
+    <div id="system-dropdown" class="system-dropdown">
+        <div class="menu-header">SYSTEM</div>
+        <button onclick="logout()">
+            <i class="fas fa-sign-out-alt me-2"></i> RETURN TO TITLE
+        </button>
+        <button onclick="toggleMenu()">
+            <i class="fas fa-times me-2"></i> CLOSE
+        </button>
+    </div>
+</div>
+
+<div class="system-menu-container">
+    <button class="system-btn" id="main-system-btn" onclick="toggleMenu()" title="System Menu">
+        <i class="fas fa-cog"></i>
+    </button>
+    
+    <div id="system-dropdown" class="system-dropdown">
+        <div id="menu-main-view">
+            <div class="menu-header">SYSTEM</div>
+            <button onclick="showConfirm()">
+                <i class="fas fa-sign-out-alt me-2"></i> RETURN TO TITLE
+            </button>
+            <button onclick="toggleMenu()">
+                <i class="fas fa-times me-2"></i> CLOSE
+            </button>
+        </div>
+
+        <div id="menu-confirm-view" style="display: none;">
+            <div class="menu-header text-danger">LOGOUT?</div>
+            <p class="VT323Font text-center text-white small">Unsaved progress will be lost.</p>
+            <div class="d-flex gap-2">
+                <button onclick="logout()" class="border-danger text-danger w-50 text-center">YES</button>
+                <button onclick="hideConfirm()" class="w-50 text-center">NO</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
