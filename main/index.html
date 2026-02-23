@@ -1,50 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Rico's Personal Webpage</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Rico's Personal Webpage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
 <div id="landing-screen" onclick="startGame()">
-    <div class="forest-overlay"></div>
-    
-    <div class="title-content text-center">
-        <div class="brand-badge mb-3" style="font-family: 'VT323'; color: #f2cc8f; letter-spacing: 3px;">PLAYER 1 PRESENTS</div>
-        <h1 class="game-title main-glow">FOREST TALES</h1>
-        <p class="game-subtitle">The Journey of Rico Albania</p>
-        
-        <div class="loading-bar-container" style="margin-top: 80px;">
-            <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
-            <div class="pixel-progress-outer">
-                <div id="loading-bar-fill" class="pixel-progress-inner"></div>
-            </div>
-            
-            <div id="press-key-prompt" class="mt-4" style="visibility: hidden;">
-                <p class="blink-text" style="font-family: 'Press Start 2P'; color: #f2cc8f; font-size: 0.9rem; letter-spacing: 1px;">PRESS ANY KEY TO START</p>
-            </div>
-        </div>
-    </div>
-</div>
-        
-<div class="loading-bar-container mt-5">
-    <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
-    <div class="pixel-progress-outer">
-        <div id="loading-bar-fill" class="pixel-progress-inner"></div>
-    </div>
-    <div id="press-key-prompt" class="mt-4" style="display: none;">
-        <p class="blink-text" style="font-family: 'Press Start 2P'; color: #f2cc8f; font-size: 0.8rem;">- PRESS ANY KEY TO START -</p>
-    </div>
-</div>
-    </div>
+    <div class="forest-overlay"></div>
+    <div class="title-content text-center">
+        <div class="brand-badge mb-3" style="font-family: 'VT323'; color: #f2cc8f; letter-spacing: 3px;">PLAYER 1 PRESENTS</div>
+        <h1 class="game-title main-glow">FOREST TALES</h1>
+        <p class="game-subtitle">The Journey of Rico Albania</p>
+        
+        <div class="loading-bar-container" style="margin-top: 80px;">
+            <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
+            <div class="pixel-progress-outer">
+                <div id="loading-bar-fill" class="pixel-progress-inner"></div>
+            </div>
+            <div id="press-key-prompt" class="mt-4" style="visibility: hidden;">
+                <p class="blink-text" style="font-family: 'Press Start 2P'; color: #f2cc8f; font-size: 0.9rem; letter-spacing: 1px;">PRESS ANY KEY TO START</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <audio id="game-start-sound" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3" preload="auto"></audio>
@@ -53,291 +39,240 @@
 <div id="leaf-container"></div>
 
 <div class="header-footer-custom text-center">
-  <h1 class="display-4 fw-bold">PLAYER 1</h1>
-  <p class="lead mt-2">Level 20 | IT Student | Athlete</p>
+  <h1 class="display-4 fw-bold">PLAYER 1</h1>
+  <p class="lead mt-2">Level 20 | IT Student | Athlete</p>
 </div>
 
 <nav class="navbar navbar-expand-sm sticky-top shadow">
-  <div class="container-fluid p-0">
-    <ul class="navbar-nav mx-auto"> 
-      <li class="nav-item">
-        <a class="nav-link active" href="index.html"><i class="fas fa-shield-alt me-2"></i>CHARACTER</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="gallery.html"><i class="fas fa-images me-2"></i>GALLERY</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="history.html"><i class="fas fa-scroll me-2"></i>HISTORY</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="log.html"><i class="fas fa-pen-nib me-2"></i>WORLD LOG</a>
-      </li>
-    </ul>
-  </div>
+  <div class="container-fluid p-0">
+    <ul class="navbar-nav mx-auto"> 
+      <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-shield-alt me-2"></i>CHARACTER</a></li>
+      <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-2"></i>GALLERY</a></li>
+      <li class="nav-item"><a class="nav-link" href="history.html"><i class="fas fa-scroll me-2"></i>HISTORY</a></li>
+      <li class="nav-item"><a class="nav-link" href="log.html"><i class="fas fa-pen-nib me-2"></i>WORLD LOG</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="container mt-5 content-card p-4 p-md-5 mb-5">
-  <div class="row g-5"> 
-    <div class="col-lg-5 col-md-12">
-      <h2 class="mb-4">Character Sheet</h2>
-      
-      <div class="char-card-container mb-4 mx-auto mx-lg-0" onclick="flipCard(); playLevelUp()" title="Click to Flip!">
-        <div class="card-inner" id="cardInner">
-          
-          <div class="card-front">
-            <div class="lvl-badge">20</div>
-            <div class="card-img-wrap">
-              <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico">
-            </div>
-            <div class="element-icon" title="Tech Element">
-              <i class="fas fa-microchip"></i>
-            </div>
-            <div class="text-center mt-auto">
-              <span class="char-name-text">RICO ALBANIA</span>
-            </div>
-          </div>
+  <div class="row g-5"> 
+    <div class="col-lg-5 col-md-12">
+      <h2 class="mb-4">Character Sheet</h2>
+      <div class="char-card-container mb-4 mx-auto mx-lg-0" onclick="flipCard(); playLevelUp()" title="Click to Flip!">
+        <div class="card-inner" id="cardInner">
+          <div class="card-front">
+            <div class="lvl-badge">20</div>
+            <div class="card-img-wrap">
+              <img src="https://github.com/ricoalbania/WEBPROG-IT242-HTML-Lessons/blob/feature/rwd/Image%20(5).jpg?raw=true" alt="rico">
+            </div>
+            <div class="element-icon" title="Tech Element"><i class="fas fa-microchip"></i></div>
+            <div class="text-center mt-auto"><span class="char-name-text">RICO ALBANIA</span></div>
+          </div>
+          <div class="card-back">
+            <h4 class="text-center" style="font-family: 'Press Start 2P'; font-size: 0.8rem;">REAR VIEW</h4>
+            <hr class="border-warning">
+            <ul class="list-unstyled" style="font-family: 'VT323'; font-size: 1.3rem;">
+              <li><i class="fas fa-crown text-warning me-2"></i> Rank: Pioneer</li>
+              <li><i class="fas fa-bolt text-info me-2"></i> Style: Agile</li>
+              <li><i class="fas fa-heart text-danger me-2"></i> Status: Ready</li>
+            </ul>
+            <div class="text-center mt-3 opacity-50">
+               <i class="fas fa-shield-halved fa-3x"></i>
+               <p class="mt-2"><small>AUTHENTIC HERO GEAR</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <div class="card-back">
-            <h4 class="text-center" style="font-family: 'Press Start 2P'; font-size: 0.8rem;">REAR VIEW</h4>
-            <hr class="border-warning">
-            <ul class="list-unstyled" style="font-family: 'VT323'; font-size: 1.3rem;">
-              <li><i class="fas fa-crown text-warning me-2"></i> Rank: Pioneer</li>
-              <li><i class="fas fa-bolt text-info me-2"></i> Style: Agile</li>
-              <li><i class="fas fa-heart text-danger me-2"></i> Status: Ready</li>
-            </ul>
-            <div class="text-center mt-3 opacity-50">
-               <i class="fas fa-shield-halved fa-3x"></i>
-               <p class="mt-2"><small>AUTHENTIC HERO GEAR</small></p>
-            </div>
-          </div>
+      <ul class="nav nav-tabs border-0 mb-3 justify-content-center justify-content-lg-start" id="charTab" role="tablist">
+        <li class="nav-item"><button class="nav-link active rpg-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button">STATS</button></li>
+        <li class="nav-item"><button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#bio" type="button">LORE</button></li>
+        <li class="nav-item"><button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">INFO</button></li>
+      </ul>
 
-        </div>
-      </div>
+      <div class="tab-content stats-box p-3" id="charTabContent">
+        <div class="tab-pane fade show active" id="stats">
+          <small class="d-block mb-1 text-uppercase fw-bold">HP [Health]</small>
+          <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 90%"></div></div>
+          <small class="d-block mb-1 text-uppercase fw-bold">MP [Logic]</small>
+          <div class="progress progress-rpg"><div class="progress-bar mp-bar" style="width: 75%"></div></div>
+          <small class="d-block mb-1 text-uppercase fw-bold">EXP [Studies]</small>
+          <div class="progress progress-rpg"><div class="progress-bar exp-bar" style="width: 50%"></div></div>
+        </div>
+        <div class="tab-pane fade" id="bio">
+          <h4 class="fw-bold mb-3" style="color: #f2cc8f;">The Lore</h4>
+          <p style="text-align: justify; font-size: 1.1rem;">I am an aspiring IT professional at <b>Asia Pacific College</b>, passionate about solving real-world mysteries through technology.</p>
+        </div>
+        <div class="tab-pane fade" id="details">
+          <h4 class="fw-bold mb-3" style="color: #f2cc8f;">Detailed Specs</h4>
+          <ul class="list-unstyled mb-0" style="font-family: 'VT323'; font-size: 1.3rem;">
+            <li><span class="text-success">[SCHOOL]:</span> Asia Pacific College</li>
+            <li><span class="text-success">[BIRTHDATE]:</span> February 25, 2005</li>
+            <li><span class="text-success">[ORIGIN]:</span> Paranaque City</li>
+            <li><span class="text-success">[CLASS]:</span> BS Information Technology</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <ul class="nav nav-tabs border-0 mb-3 justify-content-center justify-content-lg-start" id="charTab" role="tablist">
-        <li class="nav-item"><button class="nav-link active rpg-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button">STATS</button></li>
-        <li class="nav-item"><button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#bio" type="button">LORE</button></li>
-        <li class="nav-item"><button class="nav-link rpg-tab" data-bs-toggle="tab" data-bs-target="#details" type="button">INFO</button></li>
-      </ul>
+    <div class="col-lg-7 col-md-12">
+      <h2 class="text-success mb-4">EQUIPMENT SCREEN</h2>
+      <div class="equipment-grid mb-5">
+        <div class="paper-doll-container">
+          <i class="fas fa-code-branch central-silhouette"></i>
+          <a href="https://gemini.google.com" target="_blank" class="equip-slot slot-head" data-description="GEMINI: AI Brain."><i class="fas fa-wand-magic-sparkles"></i><span class="slot-label">GEMINI</span></a>
+          <a href="https://github.com" target="_blank" class="equip-slot slot-weapon" data-description="GITHUB: The Armory."><i class="fab fa-github"></i><span class="slot-label">GITHUB</span></a>
+          <a href="https://www.w3schools.com" target="_blank" class="equip-slot slot-body" data-description="W3SCHOOLS: The Foundation."><i class="fas fa-book"></i><span class="slot-label">W3S</span></a>
+          <a href="https://chatgpt.com" target="_blank" class="equip-slot slot-accessory" data-description="CHATGPT: Support Familiar."><i class="fas fa-robot"></i><span class="slot-label">AI</span></a>
+          <a href="https://fonts.google.com" target="_blank" class="equip-slot slot-mount" data-description="RESOURCES: Style Engine."><i class="fas fa-palette"></i><span class="slot-label">ASSETS</span></a>
+        </div>
+      </div>
 
-      <div class="tab-content stats-box p-3" id="charTabContent">
-        <div class="tab-pane fade show active" id="stats">
-          <small class="d-block mb-1 text-uppercase fw-bold">HP [Health]</small>
-          <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 90%"></div></div>
-          <small class="d-block mb-1 text-uppercase fw-bold">MP [Logic]</small>
-          <div class="progress progress-rpg"><div class="progress-bar mp-bar" style="width: 75%"></div></div>
-          <small class="d-block mb-1 text-uppercase fw-bold">EXP [Studies]</small>
-          <div class="progress progress-rpg"><div class="progress-bar exp-bar" style="width: 50%"></div></div>
-        </div>
-        <div class="tab-pane fade" id="bio">
-          <h4 class="fw-bold mb-3" style="color: #f2cc8f;">The Lore</h4>
-          <p style="text-align: justify; font-size: 1.1rem;">I am an aspiring IT professional at <b>Asia Pacific College</b>, passionate about solving real-world mysteries through technology.</p>
-        </div>
-        <div class="tab-pane fade" id="details">
-          <h4 class="fw-bold mb-3" style="color: #f2cc8f;">Detailed Specs</h4>
-          <ul class="list-unstyled mb-0" style="font-family: 'VT323'; font-size: 1.3rem;">
-            <li><span class="text-success">[SCHOOL]:</span> Asia Pacific College</li>
-            <li><span class="text-success">[BIRTHDATE]:</span> February 25, 2005</li>
-            <li><span class="text-success">[ORIGIN]:</span> Paranaque City</li>
-            <li><span class="text-success">[CLASS]:</span> BS Information Technology</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <div class="skill-tree-block mt-5">
+        <h2 class="text-success mb-4">SKILL TREE</h2>
+        <div class="skill-tree-map text-center" style="position: relative; padding-bottom: 50px;">
+          <div class="skill-node root mx-auto" style="width: 75px; height: 75px; border: 3px solid #f2cc8f; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); box-shadow: 0 0 30px rgba(242, 204, 143, 0.8); position: relative; z-index: 5;">
+            <i class="fas fa-microchip" style="font-size: 2rem; color: #f2cc8f;"></i>
+            <div class="node-label" style="position: absolute; bottom: -35px; font-family: 'VT323'; color: #f2cc8f; font-size: 1.1rem; white-space: nowrap; font-weight: bold;">IT FOUNDATION</div>
+          </div>
+          <div class="tree-line mx-auto" style="width: 2px; height: 50px; background: #f2cc8f; margin-top: 35px;"></div>
+          <div class="horizontal-divider mx-auto" style="width: 80%; height: 2px; background: #f2cc8f;"></div>
+          <div class="d-flex justify-content-between mt-4 px-2">
+            <div class="skill-branch">
+              <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
+              <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #ff4d4d; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);"><i class="fas fa-fire" style="color: #ff4d4d; font-size: 1.5rem;"></i></div>
+              <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">FRONTEND</div>
+            </div>
+            <div class="skill-branch">
+              <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
+              <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #ffcc00; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);"><i class="fas fa-bolt" style="color: #ffcc00; font-size: 1.5rem;"></i></div>
+              <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">BACKEND</div>
+            </div>
+            <div class="skill-branch">
+              <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
+              <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);"><i class="fas fa-shield-alt" style="color: #00ff88; font-size: 1.5rem;"></i></div>
+              <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">SECURITY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+</div>
 
-    <div class="col-lg-7 col-md-12">
-      <h2 class="text-success mb-4">EQUIPMENT SCREEN</h2>
-      <div class="equipment-grid mb-5">
-        <div class="paper-doll-container">
-          <i class="fas fa-code-branch central-silhouette"></i>
-          <a href="https://gemini.google.com" target="_blank" class="equip-slot slot-head" data-description="GEMINI: AI Brain."><i class="fas fa-wand-magic-sparkles"></i><span class="slot-label">GEMINI</span></a>
-          <a href="https://github.com" target="_blank" class="equip-slot slot-weapon" data-description="GITHUB: The Armory."><i class="fab fa-github"></i><span class="slot-label">GITHUB</span></a>
-          <a href="https://www.w3schools.com" target="_blank" class="equip-slot slot-body" data-description="W3SCHOOLS: The Foundation."><i class="fas fa-book"></i><span class="slot-label">W3S</span></a>
-          <a href="https://chatgpt.com" target="_blank" class="equip-slot slot-accessory" data-description="CHATGPT: Support Familiar."><i class="fas fa-robot"></i><span class="slot-label">AI</span></a>
-          <a href="https://fonts.google.com" target="_blank" class="equip-slot slot-mount" data-description="RESOURCES: Style Engine."><i class="fas fa-palette"></i><span class="slot-label">ASSETS</span></a>
-        </div>
-      </div>
-
-<div class="skill-tree-block mt-5">
-    <h2 class="text-success mb-4">SKILL TREE</h2>
-
-    <div class="skill-tree-map text-center" style="position: relative; padding-bottom: 50px;">
-        <div class="skill-node root mx-auto" style="width: 75px; height: 75px; border: 3px solid #f2cc8f; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.9); box-shadow: 0 0 30px rgba(242, 204, 143, 0.8); position: relative; z-index: 5;">
-            <i class="fas fa-microchip" style="font-size: 2rem; color: #f2cc8f;"></i>
-            <div class="node-label" style="position: absolute; bottom: -35px; font-family: 'VT323'; color: #f2cc8f; font-size: 1.1rem; white-space: nowrap; font-weight: bold;">IT FOUNDATION</div>
-        </div>
-        
-        <div class="tree-line mx-auto" style="width: 2px; height: 50px; background: #f2cc8f; margin-top: 35px;"></div>
-        <div class="horizontal-divider mx-auto" style="width: 80%; height: 2px; background: #f2cc8f;"></div>
-
-        <div class="d-flex justify-content-between mt-4 px-2">
-            <div class="skill-branch">
-                <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
-                <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #ff4d4d; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(255, 77, 77, 0.6);">
-                    <i class="fas fa-fire" style="color: #ff4d4d; font-size: 1.5rem;"></i>
-                </div>
-                <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">FRONTEND</div>
-            </div>
-
-            <div class="skill-branch">
-                <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
-                <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #ffcc00; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);">
-                    <i class="fas fa-bolt" style="color: #ffcc00; font-size: 1.5rem;"></i>
-                </div>
-                <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">BACKEND</div>
-            </div>
-
-            <div class="skill-branch">
-                <div class="tree-line mx-auto" style="width: 2px; height: 20px; background: #f2cc8f;"></div>
-                <div class="skill-node mini-node" style="width: 60px; height: 60px; border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #1a1a1a; box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);">
-                    <i class="fas fa-shield-alt" style="color: #00ff88; font-size: 1.5rem;"></i>
-                </div>
-                <div class="node-label-small mt-2" style="font-family: 'VT323'; color: #fff; letter-spacing: 1px;">SECURITY</div>
-            </div>
-        </div>
-    </div>
-</div> </div> </div> </div> <div class="header-footer-custom text-center mt-5">
-    <p class="mb-0">© 2026 PLAYER 1 | Built with Passion & Code</p>
+<div class="header-footer-custom text-center mt-5">
+    <p class="mb-0">© 2026 PLAYER 1 | Built with Passion & Code</p>
 </div>
 
 <div class="system-menu-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-    <button class="system-btn" id="main-system-btn" onclick="toggleMenu()" title="System Menu">
-        <i class="fas fa-cog"></i>
-    </button>
-    <div id="system-dropdown" class="system-dropdown">
-        <div id="menu-main-view">
-            <div class="menu-header">SYSTEM</div>
-            <button onclick="showConfirm()"><i class="fas fa-sign-out-alt me-2"></i> RETURN TO TITLE</button>
-            <button onclick="toggleMenu()"><i class="fas fa-times me-2"></i> CLOSE</button>
-        </div>
-        <div id="menu-confirm-view" style="display: none;">
-            <div class="menu-header text-danger">LOGOUT?</div>
-            <p class="VT323Font text-center text-white small">Unsaved progress will be lost.</p>
-            <div class="d-flex gap-2 p-2">
-                <button onclick="logout()" class="border-danger text-danger w-50 text-center">YES</button>
-                <button onclick="hideConfirm()" class="w-50 text-center">NO</button>
-            </div>
-        </div>
-    </div>
+    <button class="system-btn" id="main-system-btn" onclick="toggleMenu()" title="System Menu">
+        <i class="fas fa-cog"></i>
+    </button>
+    <div id="system-dropdown" class="system-dropdown">
+        <div id="menu-main-view">
+            <div class="menu-header">SYSTEM</div>
+            <button onclick="showConfirm()"><i class="fas fa-sign-out-alt me-2"></i> RETURN TO TITLE</button>
+            <button onclick="toggleMenu()"><i class="fas fa-times me-2"></i> CLOSE</button>
+        </div>
+        <div id="menu-confirm-view" style="display: none;">
+            <div class="menu-header text-danger">LOGOUT?</div>
+            <p class="VT323Font text-center text-white small">Unsaved progress will be lost.</p>
+            <div class="d-flex gap-2 p-2">
+                <button onclick="logout()" class="border-danger text-danger w-50 text-center">YES</button>
+                <button onclick="hideConfirm()" class="w-50 text-center">NO</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
 function startGame() {
-    const startSound = document.getElementById('game-start-sound');
-    if(startSound) { startSound.play().catch(e => console.log("Audio play blocked.")); }
-    sessionStorage.setItem('gameStarted', 'true');
-    const screen = document.getElementById('landing-screen');
-    screen.style.opacity = '0';
-    screen.style.pointerEvents = 'none'; 
-    setTimeout(() => { screen.style.display = 'none'; }, 1000); 
+    const startSound = document.getElementById('game-start-sound');
+    if(startSound) { startSound.play().catch(e => console.log("Audio play blocked.")); }
+    sessionStorage.setItem('gameStarted', 'true');
+    const screen = document.getElementById('landing-screen');
+    screen.style.opacity = '0';
+    screen.style.pointerEvents = 'none'; 
+    setTimeout(() => { screen.style.display = 'none'; }, 1000); 
 }
 
 function flipCard() {
-    const cardInner = document.getElementById('cardInner');
-    cardInner.classList.toggle('is-flipped');
+    document.getElementById('cardInner').classList.toggle('is-flipped');
 }
 
 function playLevelUp() {
-    const sound = document.getElementById('level-up-sound');
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    if (audioContext.state === 'suspended') { audioContext.resume(); }
-    sound.pause();
-    sound.currentTime = 0;
-    sound.play().catch(error => console.log("Playback failed", error));
-    const img = document.querySelector('.card-img-wrap img');
-    if (img) {
-        img.style.filter = "brightness(2) contrast(1.5)";
-        setTimeout(() => { img.style.filter = "none"; }, 150);
-    }
+    const sound = document.getElementById('level-up-sound');
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioContext.state === 'suspended') { audioContext.resume(); }
+    sound.pause();
+    sound.currentTime = 0;
+    sound.play().catch(error => console.log("Playback failed", error));
+    const img = document.querySelector('.card-img-wrap img');
+    if (img) {
+        img.style.filter = "brightness(2) contrast(1.5)";
+        setTimeout(() => { img.style.filter = "none"; }, 150);
+    }
 }
 
 function createLeaf() {
-    const container = document.getElementById('leaf-container');
-    if(!container) return;
-    const leaf = document.createElement('div');
-    leaf.className = 'leaf';
-    leaf.innerHTML = '🍃'; 
-    leaf.style.left = Math.random() * 100 + 'vw';
-    leaf.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
-    container.appendChild(leaf);
-    setTimeout(() => { leaf.remove(); }, 10000);
+    const container = document.getElementById('leaf-container');
+    if(!container) return;
+    const leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    leaf.innerHTML = '🍃'; 
+    leaf.style.left = Math.random() * 100 + 'vw';
+    leaf.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
+    container.appendChild(leaf);
+    setTimeout(() => { leaf.remove(); }, 10000);
 }
 setInterval(createLeaf, 800);
 
 window.onload = function() {
-    if (sessionStorage.getItem('gameStarted') === 'true') {
-        const screen = document.getElementById('landing-screen');
-        if (screen) screen.style.display = 'none';
-        return;
-    }
+    if (sessionStorage.getItem('gameStarted') === 'true') {
+        const screen = document.getElementById('landing-screen');
+        if (screen) screen.style.display = 'none';
+        return;
+    }
 
-    const bar = document.getElementById('loading-bar-fill');
-    const status = document.getElementById('loading-status');
-    const prompt = document.getElementById('press-key-prompt');
+    const bar = document.getElementById('loading-bar-fill');
+    const status = document.getElementById('loading-status');
+    const prompt = document.getElementById('press-key-prompt');
 
-    // Start the loading simulation
-    setTimeout(() => {
-        bar.classList.add('finished');
-        status.innerText = "WORLD LOADED";
-        prompt.style.visibility = "visible";
+    setTimeout(() => {
+        if(bar) bar.classList.add('finished');
+        if(status) status.innerText = "WORLD LOADED";
+        if(prompt) prompt.style.visibility = "visible";
 
-        // Listen for ANY key press to start
-        window.addEventListener('keydown', function handleFirstKey() {
-            startGame();
-            window.removeEventListener('keydown', handleFirstKey);
-        }, { once: true });
-        
-    }, 3000); 
+        window.addEventListener('keydown', function handleFirstKey() {
+            startGame();
+            window.removeEventListener('keydown', handleFirstKey);
+        }, { once: true });
+        
+    }, 3000); 
 };
 
 function toggleMenu() {
-    const menu = document.getElementById('system-dropdown');
-    menu.classList.toggle('active');
-    if (!menu.classList.contains('active')) { hideConfirm(); }
+    const menu = document.getElementById('system-dropdown');
+    menu.classList.toggle('active');
+    if (!menu.classList.contains('active')) { hideConfirm(); }
 }
 
 function logout() {
-    sessionStorage.removeItem('gameStarted');
-    document.body.style.filter = "brightness(0.2)";
-    document.body.style.transition = "filter 0.5s";
-    setTimeout(() => { window.location.reload(); }, 500);
+    sessionStorage.removeItem('gameStarted');
+    document.body.style.filter = "brightness(0.2)";
+    document.body.style.transition = "filter 0.5s";
+    setTimeout(() => { window.location.reload(); }, 500);
 }
 
 function showConfirm() {
-    document.getElementById('menu-main-view').style.display = 'none';
-    document.getElementById('menu-confirm-view').style.display = 'block';
+    document.getElementById('menu-main-view').style.display = 'none';
+    document.getElementById('menu-confirm-view').style.display = 'block';
 }
 
 function hideConfirm() {
-    document.getElementById('menu-main-view').style.display = 'block';
-    document.getElementById('menu-confirm-view').style.display = 'none';
+    document.getElementById('menu-main-view').style.display = 'block';
+    document.getElementById('menu-confirm-view').style.display = 'none';
 }
 </script>
-
-<div class="system-menu-container">
-    <button class="system-btn" id="main-system-btn" onclick="toggleMenu()" title="System Menu">
-        <i class="fas fa-cog"></i>
-    </button>
-    <div id="system-dropdown" class="system-dropdown">
-        <div id="menu-main-view">
-            <div class="menu-header">SYSTEM</div>
-            <button onclick="showConfirm()">
-                <i class="fas fa-sign-out-alt me-2"></i> RETURN TO TITLE
-            </button>
-            <button onclick="toggleMenu()">
-                <i class="fas fa-times me-2"></i> CLOSE
-            </button>
-        </div>
-        <div id="menu-confirm-view" style="display: none;">
-            <div class="menu-header text-danger">LOGOUT?</div>
-            <p class="VT323Font text-center text-white small">Unsaved progress will be lost.</p>
-            <div class="d-flex gap-2">
-                <button onclick="logout()" class="border-danger text-danger w-50 text-center">YES</button>
-                <button onclick="hideConfirm()" class="w-50 text-center">NO</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
