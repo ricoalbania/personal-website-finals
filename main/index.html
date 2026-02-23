@@ -11,6 +11,22 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+<div id="landing-screen">
+    <div class="title-content text-center">
+        <h1 class="game-title">FOREST TALES</h1>
+        <p class="game-subtitle">The Journey of Player 1</p>
+        
+        <div class="start-prompt mt-5" onclick="startGame()">
+            <span class="blink-text">PRESS START TO ENTER</span>
+        </div>
+        
+        <div class="loading-bar-container mt-4">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+</div>
+
 <body>
 
 <audio id="level-up-sound" src="data:audio/wav;base64,UklGRjIAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQYAAABAgICAgICAgICAg" preload="auto"></audio>
@@ -153,6 +169,20 @@
 </div>
 
 <script>
+function startGame() {
+    // 1. Play a "Game Start" sound if you have one
+    const startSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2010/2010-preview.mp3');
+    startSound.play();
+
+    // 2. Hide the landing screen with a fade-out effect
+    const screen = document.getElementById('landing-screen');
+    screen.style.opacity = '0';
+    
+    setTimeout(() => {
+        screen.style.display = 'none';
+    }, 1000); // Matches the transition time
+}
+
   function flipCard() {
     const cardInner = document.getElementById('cardInner');
     cardInner.classList.toggle('is-flipped');
