@@ -1111,3 +1111,85 @@ body {
     height: 150px;
     position: relative;
 }
+
+/* CINEMATIC LANDING SCREEN */
+#landing-screen {
+    background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.forest-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+}
+
+/* PIXEL ART START BUTTON */
+.rpg-start-btn {
+    background: #f2cc8f;
+    border: none;
+    padding: 15px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    color: #2d3142;
+    position: relative;
+    box-shadow: 6px 6px 0px #3d405b;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.rpg-start-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0px #3d405b;
+    background: #ffebcc;
+}
+
+.rpg-start-btn:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0px #3d405b;
+}
+
+/* PIXEL PROGRESS BAR */
+.pixel-progress-outer {
+    width: 300px;
+    height: 24px;
+    border: 4px solid #f2cc8f;
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 2px;
+}
+
+.pixel-progress-inner {
+    height: 100%;
+    width: 0%; /* Animate this with JS */
+    background: #81b29a;
+    box-shadow: inset -4px 0px rgba(0,0,0,0.2);
+    animation: loadProgress 3s infinite;
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+.loading-text {
+    font-family: 'VT323', monospace;
+    color: #f2cc8f;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}

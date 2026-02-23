@@ -15,18 +15,25 @@
 <body>
 
 <div id="landing-screen">
+    <div class="forest-overlay"></div>
+    
     <div class="title-content text-center">
-        <h1 class="game-title">FOREST TALES</h1>
-        <p class="game-subtitle">The Journey of Player 1</p>
+        <div class="brand-badge mb-3">PLAYER 1 PRESENTS</div>
+        <h1 class="game-title main-glow">FOREST TALES</h1>
+        <p class="game-subtitle">The Journey of Rico Albania</p>
         
-        <div class="mt-5">
+        <div class="mt-5 pt-4">
             <button class="rpg-start-btn" onclick="startGame()">
-                <i class="fas fa-play me-2"></i> START GAME
+                <span class="btn-pixel-edge"></span>
+                <i class="fas fa-play me-3"></i> START GAME
             </button>
         </div>
         
         <div class="loading-bar-container mt-5">
-            <div class="loading-bar"></div>
+            <div class="loading-text mb-2">LOADING WORLD...</div>
+            <div class="pixel-progress-outer">
+                <div class="pixel-progress-inner"></div>
+            </div>
         </div>
     </div>
 </div>
