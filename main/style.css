@@ -961,10 +961,10 @@ body {
 
 /* SYSTEM MENU POSITIONING */
 .system-menu-container {
-    position: fixed;
+    position: fixed; /* This keeps it from moving with the content */
     bottom: 20px;
     right: 20px;
-    z-index: 9999;
+    z-index: 9999; /* This keeps it on top of everything else */
 }
 
 /* THE GEAR BUTTON */
