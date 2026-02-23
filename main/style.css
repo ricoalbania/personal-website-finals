@@ -45,15 +45,19 @@ h4 { font-size: 0.9rem; }
 
 /* 4. HEADER & NAVIGATION */
 .header-footer-custom {
-    background: linear-gradient(180deg, #1b2e1b 0%, #0b130b 100%);
-    border-bottom: 6px solid #4a5d4a; 
+    /* The Forest Header */
+    background: linear-gradient(to bottom, rgba(11, 19, 11, 0.4), rgba(11, 19, 11, 0.9)), 
+                url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071');
+    background-size: cover;
+    background-position: center 30%; /* Focus on the trees */
     padding: 60px 20px !important;
-}
-
-.navbar {
-    background-color: #1b2e1b !important;
     border-bottom: 4px solid #f2cc8f;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    image-rendering: pixelated; /* Keeps it gamey */
+}
+.navbar {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid rgba(242, 204, 143, 0.3);
 }
 
 .nav-link {
@@ -756,6 +760,20 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
     overflow: hidden;
 }
 
+.display-4 {
+    font-family: 'Press Start 2P', cursive;
+    color: #f2cc8f;
+    text-shadow: 0 0 20px rgba(242, 204, 143, 0.6), 4px 4px 0px #000;
+    letter-spacing: 5px;
+}
+
+.lead {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+}
+
 /* KEEP the Title and Nav styles from the previous step */
 .display-4.fw-bold {
     font-family: 'Press Start 2P', cursive;
@@ -776,10 +794,12 @@ hr { border-top: 4px dotted #f2cc8f; opacity: 0.5; margin: 40px 0; }
 
 /* THE FOREST OVERLAY BACKGROUND */
 body {
-    background: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop') no-repeat center center fixed;
-    background-size: cover;
-    image-rendering: pixelated; /* Gives it that retro game feel */
+    background-color: #0b130b; /* Solid dark forest green */
+    /* Or keep the image but at a very low opacity */
+    background-image: linear-gradient(rgba(11, 19, 11, 0.95), rgba(11, 19, 11, 0.95)), 
+                      url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071');
 }
+
 
 /* THE HUD CONTAINERS (Glassmorphism) */
 .content-card, .stats-box {
