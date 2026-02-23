@@ -1047,3 +1047,67 @@ body {
 .system-dropdown {
     min-height: 160px;
 }
+
+/* --- SKILL TREE RESTORATION --- */
+.skill-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* The Vertical Line connecting Root to Branches */
+.tree-line {
+    width: 4px;
+    height: 40px;
+    background: rgba(242, 204, 143, 0.3);
+    margin: 10px 0;
+}
+
+.skill-branches {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Glowing Nodes */
+.skill-node {
+    width: 60px;
+    height: 60px;
+    background: #1a1a1a;
+    border: 3px solid var(--node-color, #f2cc8f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--node-color, #f2cc8f);
+    position: relative;
+    box-shadow: 0 0 15px var(--node-color, transparent);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-node:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--node-color);
+}
+
+/* Labels below nodes */
+.node-label {
+    position: absolute;
+    bottom: -25px;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    white-space: nowrap;
+    color: #fff;
+}
+
+/* Battle Arena fixes */
+.battle-arena {
+    border: 2px dashed rgba(242, 204, 143, 0.5);
+    background: rgba(0,0,0,0.3);
+    height: 150px;
+    position: relative;
+}
