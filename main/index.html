@@ -12,23 +12,26 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<body>
+
 <div id="landing-screen">
     <div class="title-content text-center">
         <h1 class="game-title">FOREST TALES</h1>
         <p class="game-subtitle">The Journey of Player 1</p>
         
-        <div class="start-prompt mt-5" onclick="startGame()">
-            <span class="blink-text">PRESS START TO ENTER</span>
+        <div class="mt-5">
+            <button class="rpg-start-btn" onclick="startGame()">
+                <i class="fas fa-play me-2"></i> START GAME
+            </button>
         </div>
         
-        <div class="loading-bar-container mt-4">
+        <div class="loading-bar-container mt-5">
             <div class="loading-bar"></div>
         </div>
     </div>
 </div>
 
-<body>
-
+<audio id="game-start-sound" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3" preload="auto"></audio>
 <audio id="level-up-sound" src="data:audio/wav;base64,UklGRjIAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQYAAABAgICAgICAgICAg" preload="auto"></audio>
 
 <div id="leaf-container"></div>
@@ -141,11 +144,13 @@
 
       <div class="skill-tree-block mt-5">
         <h2 class="text-success mb-4">SKILL TREE</h2>
+        
         <div class="battle-arena">
-    <div class="stickman hero"><i class="fas fa-walking"></i><div class="sword"></div></div>
-    <div class="stickman enemy"><i class="fas fa-walking fa-flip-horizontal"></i><div class="staff"></div></div>
-</div>
-        <div class="row g-4">
+            <div class="stickman hero"><i class="fas fa-walking"></i><div class="sword"></div></div>
+            <div class="stickman enemy"><i class="fas fa-walking fa-flip-horizontal"></i><div class="staff"></div></div>
+        </div>
+
+        <div class="row g-4 mt-2">
           <div class="col-md-12">
             <p class="mb-2"><i class="fas fa-fire text-danger"></i> FRONTEND SORCERY [HTML/CSS]</p>
             <div class="progress progress-rpg"><div class="progress-bar hp-bar" style="width: 85%"></div></div>
@@ -170,67 +175,58 @@
 
 <script>
 function startGame() {
-    // 1. Play a "Game Start" sound if you have one
-    const startSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2010/2010-preview.mp3');
-    startSound.play();
+    const startSound = document.getElementById('game-start-sound');
+    
+    // Play the magical start chime
+    if(startSound) {
+        startSound.play().catch(e => console.log("Audio play blocked until click."));
+    }
 
-    // 2. Hide the landing screen with a fade-out effect
     const screen = document.getElementById('landing-screen');
     screen.style.opacity = '0';
+    screen.style.pointerEvents = 'none'; 
     
     setTimeout(() => {
         screen.style.display = 'none';
-    }, 1000); // Matches the transition time
+    }, 1000); 
 }
 
-  function flipCard() {
+function flipCard() {
     const cardInner = document.getElementById('cardInner');
     cardInner.classList.toggle('is-flipped');
-  }
+}
 
 function playLevelUp() {
     const sound = document.getElementById('level-up-sound');
-    
-    // Create an audio context to bypass browser "Autoplay" blocks
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
     if (audioContext.state === 'suspended') {
         audioContext.resume();
     }
 
-    // Reset and Play
     sound.pause();
     sound.currentTime = 0;
-    
-    let playPromise = sound.play();
+    sound.play().catch(error => console.log("Playback failed", error));
 
-    if (playPromise !== undefined) {
-        playPromise.then(_ => {
-            console.log("Sound played successfully!");
-        }).catch(error => {
-            console.log("Playback failed. Make sure to click the card!", error);
-        });
-    }
-
-    // Visual Flash Effect
     const img = document.querySelector('.card-img-wrap img');
     if (img) {
-        img.style.filter = "brightness(2) gold";
+        img.style.filter = "brightness(2) contrast(1.5)";
         setTimeout(() => { img.style.filter = "none"; }, 150);
     }
 }
 
-  function createLeaf() {
-      const container = document.getElementById('leaf-container');
-      if(!container) return;
-      const leaf = document.createElement('div');
-      leaf.className = 'leaf';
-      leaf.innerHTML = '🍃'; 
-      leaf.style.left = Math.random() * 100 + 'vw';
-      leaf.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
-      container.appendChild(leaf);
-      setTimeout(() => { leaf.remove(); }, 10000);
-  }
-  setInterval(createLeaf, 800);
+function createLeaf() {
+    const container = document.getElementById('leaf-container');
+    if(!container) return;
+    const leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    leaf.innerHTML = '🍃'; 
+    leaf.style.left = Math.random() * 100 + 'vw';
+    leaf.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
+    container.appendChild(leaf);
+    setTimeout(() => { leaf.remove(); }, 10000);
+}
+setInterval(createLeaf, 800);
 </script>
 </body>
 </html>
