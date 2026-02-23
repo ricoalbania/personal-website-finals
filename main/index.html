@@ -177,10 +177,12 @@
 function startGame() {
     const startSound = document.getElementById('game-start-sound');
     
-    // Play the magical start chime
     if(startSound) {
-        startSound.play().catch(e => console.log("Audio play blocked until click."));
+        startSound.play().catch(e => console.log("Audio play blocked."));
     }
+
+    // SAVE STATE: Tell the browser we have entered the game
+    sessionStorage.setItem('gameStarted', 'true');
 
     const screen = document.getElementById('landing-screen');
     screen.style.opacity = '0';
@@ -227,6 +229,15 @@ function createLeaf() {
     setTimeout(() => { leaf.remove(); }, 10000);
 }
 setInterval(createLeaf, 800);
+// CHECK STATE: On page load, check if the player already clicked start
+window.onload = function() {
+    if (sessionStorage.getItem('gameStarted') === 'true') {
+        const screen = document.getElementById('landing-screen');
+        if (screen) {
+            screen.style.display = 'none';
+        }
+    }
+};
 </script>
 </body>
 </html>
