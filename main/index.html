@@ -14,20 +14,26 @@
 
 <body>
 
-<div id="landing-screen">
+<div id="landing-screen" onclick="startGame()">
     <div class="forest-overlay"></div>
     
     <div class="title-content text-center">
-        <div class="brand-badge mb-3">PLAYER 1 PRESENTS</div>
+        <div class="brand-badge mb-3" style="font-family: 'VT323'; color: #f2cc8f; letter-spacing: 3px;">PLAYER 1 PRESENTS</div>
         <h1 class="game-title main-glow">FOREST TALES</h1>
         <p class="game-subtitle">The Journey of Rico Albania</p>
         
-        <div class="mt-5 pt-4">
-            <button class="rpg-start-btn" onclick="startGame()">
-                <span class="btn-pixel-edge"></span>
-                <i class="fas fa-play me-3"></i> START GAME
-            </button>
+        <div class="loading-bar-container" style="margin-top: 80px;">
+            <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
+            <div class="pixel-progress-outer">
+                <div id="loading-bar-fill" class="pixel-progress-inner"></div>
+            </div>
+            
+            <div id="press-key-prompt" class="mt-4" style="visibility: hidden;">
+                <p class="blink-text" style="font-family: 'Press Start 2P'; color: #f2cc8f; font-size: 0.9rem; letter-spacing: 1px;">PRESS ANY KEY TO START</p>
+            </div>
         </div>
+    </div>
+</div>
         
 <div class="loading-bar-container mt-5">
     <div id="loading-status" class="loading-text mb-2">LOADING WORLD...</div>
@@ -259,35 +265,29 @@ function createLeaf() {
 setInterval(createLeaf, 800);
 
 window.onload = function() {
-    // Check if game already started
     if (sessionStorage.getItem('gameStarted') === 'true') {
         const screen = document.getElementById('landing-screen');
         if (screen) screen.style.display = 'none';
         return;
     }
 
-    // Simulate Loading Sequence
     const bar = document.getElementById('loading-bar-fill');
     const status = document.getElementById('loading-status');
     const prompt = document.getElementById('press-key-prompt');
-    const startBtnContainer = document.querySelector('.rpg-start-btn').parentElement;
 
-    // Hide start button initially
-    startBtnContainer.style.opacity = '0';
-
+    // Start the loading simulation
     setTimeout(() => {
         bar.classList.add('finished');
         status.innerText = "WORLD LOADED";
-        prompt.style.display = "block";
-        startBtnContainer.style.transition = "opacity 0.5s";
-        startBtnContainer.style.opacity = '1';
+        prompt.style.visibility = "visible";
 
-        // Listener for "Press Any Key"
+        // Listen for ANY key press to start
         window.addEventListener('keydown', function handleFirstKey() {
             startGame();
             window.removeEventListener('keydown', handleFirstKey);
         }, { once: true });
-    }, 3000); // 3 seconds to match the loading animation
+        
+    }, 3000); 
 };
 
 function toggleMenu() {
